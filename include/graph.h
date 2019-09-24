@@ -64,7 +64,7 @@ struct SGraph {
    WINDOW *		shadowWin;
    int			titleAdj;
    chtype *		graphChar;
-   boolean		shadow;
+   _bool		shadow;
    int			boxHeight;
    int			boxWidth;
    chtype *		xtitle;
@@ -114,7 +114,7 @@ int setCDKGraph (
 		int *		/* values */,
 		int		/* count */,
 		const char *	/* graphChar */,
-		boolean		/* startAtZero */,
+		_bool		/* startAtZero */,
 		EGraphDisplayType  /* displayType */);
 
 /*
@@ -124,13 +124,13 @@ int setCDKGraphValues (
 		CDKGRAPH *	/* graph */,
 		int *		/* values */,
 		int		/* count */,
-		boolean		/* startAtZero */);
+		_bool		/* startAtZero */);
 
 int setCDKGraphValue (
 		CDKGRAPH *	/* graph */,
 		int		/* index */,
 		int		/* value */,
-		boolean		/* startAtZero */);
+		_bool		/* startAtZero */);
 
 int *getCDKGraphValues (
 		CDKGRAPH *	/* graph */,
@@ -174,9 +174,9 @@ EGraphDisplayType getCDKGraphDisplayType (
  */
 void setCDKGraphBox (
 		CDKGRAPH *	/* graph */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKGraphBox (
+_bool getCDKGraphBox (
 		CDKGRAPH *	/* graph */);
 
 /*

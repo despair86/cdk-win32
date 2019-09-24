@@ -115,7 +115,7 @@ int getListIndex (
 		const char *	/* title */,
 		CDK_CSTRING2	/* list */,
 		int		/* listSize */,
-		boolean		/* numbers */);
+		_bool		/* numbers */);
 
 /*
  * This gets a simple string value from a user.
@@ -153,7 +153,7 @@ int viewInfo (
 		int		/* size */,
 		CDK_CSTRING2	/* buttons */,
 		int		/* buttonCount */,
-		boolean		/* interpret */);
+		_bool		/* interpret */);
 
 /*
  * This is a wrapper for qsort.
@@ -324,7 +324,7 @@ EDisplayType char2DisplayType (
 /*
  * Tell if a display type is "hidden"
  */
-boolean isHiddenDisplayType (
+_bool isHiddenDisplayType (
 		EDisplayType	/* type */);
 
 /*

@@ -60,12 +60,12 @@ cdk_histogram \- curses histogram widget
 .TP 15
 .B "void drawCDKHistogram ("
 .BI "CDKHISTOGRAM *" "histogram",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKHistogram ("
 .BI "CDKHISTOGRAM *" "histogram");
 .TP 15
-.B "boolean getCDKHistogramBox ("
+.B "_bool getCDKHistogramBox ("
 .BI "CDKHISTOGRAM *" "histogram");
 .TP 15
 .B "chtype getCDKHistogramFillerChar ("
@@ -93,8 +93,8 @@ cdk_histogram \- curses histogram widget
 .BI "CDKHISTOGRAM *" "histogram",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKHISTOGRAM *newCDKHistogram ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -104,8 +104,8 @@ cdk_histogram \- curses histogram widget
 .BI "int " "width",
 .BI "int " "orient",
 .BI "const char *" "title",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKHistogram ("
 .BI "CDKHISTOGRAM *" "histogram");
@@ -119,7 +119,7 @@ cdk_histogram \- curses histogram widget
 .BI "int " "highValue",
 .BI "int " "currentValue",
 .BI "chtype " "fillerCharacter",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKHistogramBackgroundAttrib ("
 .BI "CDKHISTOGRAM *" "histogram",
@@ -131,7 +131,7 @@ cdk_histogram \- curses histogram widget
 .TP 15
 .B "void setCDKHistogramBox ("
 .BI "CDKHISTOGRAM *" "histogram",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKHistogramBoxAttribute ("
 .BI "CDKHISTOGRAM *" "histogram",
@@ -256,7 +256,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which states
+The final parameter \fBrefresh\fR is a _bool value which states
 whether the widget will get refreshed after the move.
 .RE
 .TP 5

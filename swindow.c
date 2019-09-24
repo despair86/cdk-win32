@@ -10,7 +10,7 @@
  * Declare file local prototypes.
  */
 static int createList (CDKSWINDOW *swindow, int listSize);
-static void drawCDKSwindowList (CDKSWINDOW *swindow, boolean Box);
+static void drawCDKSwindowList (CDKSWINDOW *swindow, _bool Box);
 
 DeclareCDKObjects (SWINDOW, Swindow, setCdk, Int);
 
@@ -24,8 +24,8 @@ CDKSWINDOW *newCDKSwindow (CDKSCREEN *cdkscreen,
 			   int width,
 			   const char *title,
 			   int saveLines,
-			   boolean Box,
-			   boolean shadow)
+			   _bool Box,
+			   _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKSWINDOW *swindow          = 0;
@@ -153,7 +153,7 @@ CDKSWINDOW *newCDKSwindow (CDKSCREEN *cdkscreen,
 /*
  * This sets the lines and the box attribute of the scrolling window.
  */
-void setCDKSwindow (CDKSWINDOW *swindow, CDK_CSTRING2 list, int lines, boolean Box)
+void setCDKSwindow (CDKSWINDOW *swindow, CDK_CSTRING2 list, int lines, _bool Box)
 {
    setCDKSwindowContents (swindow, list, lines);
    setCDKSwindowBox (swindow, Box);
@@ -205,12 +205,12 @@ chtype **getCDKSwindowContents (CDKSWINDOW *swindow, int *size)
 /*
  * This sets the box attribute for the widget.
  */
-void setCDKSwindowBox (CDKSWINDOW *swindow, boolean Box)
+void setCDKSwindowBox (CDKSWINDOW *swindow, _bool Box)
 {
    ObjOf (swindow)->box = Box;
    ObjOf (swindow)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKSwindowBox (CDKSWINDOW *swindow)
+_bool getCDKSwindowBox (CDKSWINDOW *swindow)
 {
    return ObjOf (swindow)->box;
 }
@@ -483,7 +483,7 @@ void activateCDKSwindow (CDKSWINDOW *swindow, chtype *actions)
    if (actions == 0)
    {
       chtype input;
-      boolean functionKey;
+      _bool functionKey;
 
       for (;;)
       {
@@ -722,8 +722,8 @@ static int _injectCDKSwindow (CDKOBJS *object, chtype input)
 static void _moveCDKSwindow (CDKOBJS *object,
 			     int xplace,
 			     int yplace,
-			     boolean relative,
-			     boolean refresh_flag)
+			     _bool relative,
+			     _bool refresh_flag)
 {
    CDKSWINDOW *swindow = (CDKSWINDOW *)object;
    /* *INDENT-EQLS* */
@@ -768,7 +768,7 @@ static void _moveCDKSwindow (CDKOBJS *object,
 /*
  * This function draws the swindow window widget.
  */
-static void _drawCDKSwindow (CDKOBJS *object, boolean Box)
+static void _drawCDKSwindow (CDKOBJS *object, _bool Box)
 {
    CDKSWINDOW *swindow = (CDKSWINDOW *)object;
 
@@ -795,7 +795,7 @@ static void _drawCDKSwindow (CDKOBJS *object, boolean Box)
 /*
  * This draws in the contents of the scrolling window.
  */
-static void drawCDKSwindowList (CDKSWINDOW *swindow, boolean Box GCC_UNUSED)
+static void drawCDKSwindowList (CDKSWINDOW *swindow, _bool Box GCC_UNUSED)
 {
    int lastLine, x;
 

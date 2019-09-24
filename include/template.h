@@ -87,7 +87,7 @@ struct STemplate {
    chtype	labelAttr;
    chtype	fieldAttr;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
    TEMPLATECB	callbackfn;
 };
 
@@ -102,8 +102,8 @@ CDKTEMPLATE *newCDKTemplate (
 		const char *	/* label */,
 		const char *	/* plate */,
 		const char *	/* overlay */,
-		boolean 	/* Box */,
-		boolean 	/* shadow */);
+		_bool 	/* Box */,
+		_bool 	/* shadow */);
 
 /*
  * This activates the cdktemplate widget.
@@ -123,7 +123,7 @@ char *activateCDKTemplate (
 void setCDKTemplate (
 		CDKTEMPLATE *	/* cdktemplate */,
 		const char *	/* value */,
-		boolean 	/* Box */);
+		_bool 	/* Box */);
 
 /*
  * This sets the value in the cdktemplate widget.
@@ -150,9 +150,9 @@ int getCDKTemplateMin (
  */
 void setCDKTemplateBox (
 		CDKTEMPLATE *	/* cdktemplate */,
-		boolean 	/* Box */);
+		_bool 	/* Box */);
 
-boolean getCDKTemplateBox (
+_bool getCDKTemplateBox (
 		CDKTEMPLATE *	/* cdktemplate */);
 
 /*

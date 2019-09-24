@@ -66,12 +66,12 @@ cdk_selection \- curses selection list widget.
 .TP 15
 .B "void drawCDKSelection ("
 .BI "CDKSELECTION *" "selection",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKSelection ("
 .BI "CDKSELECTION *" "selection");
 .TP 15
-.B "boolean getCDKSelectionBox ("
+.B "_bool getCDKSelectionBox ("
 .BI "CDKSELECTION *" "selection");
 .TP 15
 .B "int getCDKSelectionChoice ("
@@ -109,8 +109,8 @@ cdk_selection \- curses selection list widget.
 .BI "CDKSELECTION *" "selection",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKSELECTION *newCDKSelection ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -125,8 +125,8 @@ cdk_selection \- curses selection list widget.
 .BI "CDK_CONST char **" "choiceList",
 .BI "int " "choiceListLength",
 .BI "chtype " "highlight",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKSelection ("
 .BI "CDKSELECTION *" "selection");
@@ -135,7 +135,7 @@ cdk_selection \- curses selection list widget.
 .BI "CDKSELECTION *" "selection",
 .BI "chtype " "highlight",
 .BI "int *" "defChoices",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKSelectionBackgroundAttrib ("
 .BI "CDKSELECTION *" "selection",
@@ -147,7 +147,7 @@ cdk_selection \- curses selection list widget.
 .TP 15
 .B "void setCDKSelectionBox ("
 .BI "CDKSELECTION *" "selection",
-.BI "boolean " "boxWidget");
+.BI "_bool " "boxWidget");
 .TP 15
 .B "void setCDKSelectionBoxAttribute ("
 .BI "CDKSELECTION *" "selection",
@@ -346,7 +346,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

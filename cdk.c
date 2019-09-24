@@ -564,7 +564,7 @@ chtype *char2Chtype (const char *string, int *to, int *align)
 	    used++;
 	 }
 
-	 /* Set the format marker boolean to false.  */
+	 /* Set the format marker _bool to false.  */
 	 insideMarker = FALSE;
 
 	 /* Start parsing the character string.  */

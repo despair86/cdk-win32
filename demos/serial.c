@@ -25,7 +25,7 @@ char *XCursesProgramName = "serial";
 /*
  * This is the working function which probes the serial port.
  */
-boolean probeModem (void);
+_bool probeModem (void);
 
 /*
  * Define some global variables.
@@ -136,7 +136,7 @@ int main (int argc, char **argv)
  * This probes the modem and determines if we need to update
  * the display.
  */
-boolean probeModem (void)
+_bool probeModem (void)
 {
    int lines = 0;
    char *info[256], temp[256];

@@ -121,7 +121,7 @@ int setCDKGraph (CDKGRAPH *widget,
 		 int *values,
 		 int count,
 		 const char *graphChar,
-		 boolean startAtZero,
+		 _bool startAtZero,
 		 EGraphDisplayType displayType)
 {
    int ret;
@@ -152,7 +152,7 @@ static void setScales (CDKGRAPH *widget)
 /*
  * Set the values of the graph.
  */
-int setCDKGraphValues (CDKGRAPH *widget, int *values, int count, boolean startAtZero)
+int setCDKGraphValues (CDKGRAPH *widget, int *values, int count, _bool startAtZero)
 {
    int min = INT_MAX;
    int max = INT_MIN;
@@ -206,7 +206,7 @@ int *getCDKGraphValues (CDKGRAPH *widget, int *size)
 /*
  * Set the value of the graph at the given index.
  */
-int setCDKGraphValue (CDKGRAPH *widget, int Index, int value, boolean startAtZero)
+int setCDKGraphValue (CDKGRAPH *widget, int Index, int value, _bool startAtZero)
 {
    /* Make sure the index is within range. */
    if (Index < 0 || Index >= widget->count)
@@ -327,8 +327,8 @@ static void _setBKattrGraph (CDKOBJS *object, chtype attrib)
 static void _moveCDKGraph (CDKOBJS *object,
 			   int xplace,
 			   int yplace,
-			   boolean relative,
-			   boolean refresh_flag)
+			   _bool relative,
+			   _bool refresh_flag)
 {
    CDKGRAPH *widget = (CDKGRAPH *)object;
    /* *INDENT-EQLS* */
@@ -373,12 +373,12 @@ static void _moveCDKGraph (CDKOBJS *object,
 /*
  * Set whether or not the graph will be boxed.
  */
-void setCDKGraphBox (CDKGRAPH *widget, boolean Box)
+void setCDKGraphBox (CDKGRAPH *widget, _bool Box)
 {
    ObjOf (widget)->box = Box;
    ObjOf (widget)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKGraphBox (CDKGRAPH *widget)
+_bool getCDKGraphBox (CDKGRAPH *widget)
 {
    return ObjOf (widget)->box;
 }
@@ -386,7 +386,7 @@ boolean getCDKGraphBox (CDKGRAPH *widget)
 /*
  * Draw the graph widget.
  */
-static void _drawCDKGraph (CDKOBJS *object, boolean Box)
+static void _drawCDKGraph (CDKOBJS *object, _bool Box)
 {
    /* *INDENT-EQLS* */
    CDKGRAPH *widget     = (CDKGRAPH *)object;

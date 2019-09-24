@@ -58,12 +58,12 @@ cdk_alphalist \- curses sorted list widget.
 .TP 15
 .B "void drawCDKAlphalist ("
 .BI "CDKALPHALIST *" "alphalist",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKAlphalist ("
 .BI "CDKALPHALIST *" "alphalist");
 .TP 15
-.B "boolean getCDKAlphalistBox ("
+.B "_bool getCDKAlphalistBox ("
 .BI "CDKALPHALIST *" "alphalist");
 .TP 15
 .B "char **getCDKAlphalistContents ("
@@ -87,8 +87,8 @@ cdk_alphalist \- curses sorted list widget.
 .BI "CDKALPHALIST *" "alphalist",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKALPHALIST *newCDKAlphalist ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -102,8 +102,8 @@ cdk_alphalist \- curses sorted list widget.
 .BI "int " "listSize",
 .BI "chtype " "fillerCharacter",
 .BI "chtype " "highlight",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKAlphalist ("
 .BI "CDKALPHALIST *" "alphalist");
@@ -114,7 +114,7 @@ cdk_alphalist \- curses sorted list widget.
 .BI "int " "listSize",
 .BI "chtype " "fillerCharacter",
 .BI "chtype " "highlight",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKAlphalistBackgroundAttrib ("
 .BI "CDKALPHALIST *" "alphalist",
@@ -126,7 +126,7 @@ cdk_alphalist \- curses sorted list widget.
 .TP 15
 .B "void setCDKAlphalistBox ("
 .BI "CDKALPHALIST *" "alphalist",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKAlphalistBoxAttribute ("
 .BI "CDKALPHALIST *" "alphalist",
@@ -306,7 +306,7 @@ then the widget would move to the position (1,2).
 Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
-The final parameter \fBrefresh\fR is a boolean value
+The final parameter \fBrefresh\fR is a _bool value
 which states whether the widget will get refreshed after the move.
 .TP 5
 .B newCDKAlphalist

@@ -76,8 +76,8 @@ CDKCALENDAR *newCDKCalendar (CDKSCREEN *cdkscreen,
 			     chtype monthAttrib,
 			     chtype yearAttrib,
 			     chtype highlight,
-			     boolean Box,
-			     boolean shadow)
+			     _bool Box,
+			     _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKCALENDAR *calendar = 0;
@@ -237,7 +237,7 @@ time_t activateCDKCalendar (CDKCALENDAR *calendar, chtype *actions)
 {
    /* *INDENT-EQLS* */
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    time_t ret   = -1;
 
    /* Draw the widget. */
@@ -408,8 +408,8 @@ static int _injectCDKCalendar (CDKOBJS *object, chtype input)
 static void _moveCDKCalendar (CDKOBJS *object,
 			      int xplace,
 			      int yplace,
-			      boolean relative,
-			      boolean refresh_flag)
+			      _bool relative,
+			      _bool refresh_flag)
 {
    CDKCALENDAR *calendar = (CDKCALENDAR *)object;
    /* *INDENT-EQLS* */
@@ -456,7 +456,7 @@ static void _moveCDKCalendar (CDKOBJS *object,
 /*
  * This draws the calendar widget.
  */
-static void _drawCDKCalendar (CDKOBJS *object, boolean Box)
+static void _drawCDKCalendar (CDKOBJS *object, _bool Box)
 {
    CDKCALENDAR *calendar = (CDKCALENDAR *)object;
    int headerLen = (int)strlen (calendar->DayName);
@@ -586,7 +586,7 @@ void setCDKCalendar (CDKCALENDAR *calendar,
 		     chtype monthAttrib,
 		     chtype yearAttrib,
 		     chtype highlight,
-		     boolean Box)
+		     _bool Box)
 {
    setCDKCalendarDate (calendar, day, month, year);
    setCDKCalendarDayAttribute (calendar, dayAttrib);
@@ -687,12 +687,12 @@ chtype getCDKCalendarHighlight (CDKCALENDAR *calendar)
 /*
   * This sets the box attibute of the widget.
  */
-void setCDKCalendarBox (CDKCALENDAR *calendar, boolean Box)
+void setCDKCalendarBox (CDKCALENDAR *calendar, _bool Box)
 {
    ObjOf (calendar)->box = Box;
    ObjOf (calendar)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKCalendarBox (CDKCALENDAR *calendar)
+_bool getCDKCalendarBox (CDKCALENDAR *calendar)
 {
    return ObjOf (calendar)->box;
 }

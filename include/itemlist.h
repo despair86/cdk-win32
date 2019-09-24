@@ -77,7 +77,7 @@ struct SItemList {
    int		boxWidth;
    int		boxHeight;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
 };
 typedef struct SItemList CDKITEMLIST;
 
@@ -93,8 +93,8 @@ CDKITEMLIST *newCDKItemlist (
 		CDK_CSTRING2	/* itemlist */,
 		int		/* count */,
 		int		/* defaultItem */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the itemlist widget.
@@ -116,7 +116,7 @@ void setCDKItemlist (
 		CDK_CSTRING2	/* list */,
 		int		/* count */,
 		int		/* current */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This function sets the values of the item list widget.
@@ -156,9 +156,9 @@ int getCDKItemlistCurrentItem (
  */
 void setCDKItemlistBox (
 		CDKITEMLIST *	/* itemlist */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKItemlistBox (
+_bool getCDKItemlistBox (
 		CDKITEMLIST *	/* itemlist */);
 
 /*
@@ -192,7 +192,7 @@ boolean getCDKItemlistBox (
  */
 void drawCDKItemlistField (
 		CDKITEMLIST *	/* itemlist */,
-		boolean         /* highlight */);
+		_bool         /* highlight */);
 
 /*
  * This removes the widget from the screen.

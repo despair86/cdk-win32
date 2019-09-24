@@ -85,7 +85,7 @@ struct SMentry {
    int		min;
    int		logicalRows;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
    chtype	filler;
    chtype	hidden;
    MENTRYCB	callbackfn;
@@ -107,8 +107,8 @@ CDKMENTRY *newCDKMentry (
 		int		/* fieldrows */,
 		int		/* logicalRows */,
 		int		/* min */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the widget.
@@ -129,7 +129,7 @@ void setCDKMentry (
 		CDKMENTRY *	/* mentry */,
 		const char *	/* value */,
 		int		/* min */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the value of the widget.
@@ -176,9 +176,9 @@ chtype getCDKMentryHiddenChar (
  */
 void setCDKMentryBox (
 		CDKMENTRY *	/* mentry */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKMentryBox (
+_bool getCDKMentryBox (
 		CDKMENTRY *	/* mentry */);
 
 /*

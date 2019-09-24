@@ -42,8 +42,8 @@ CDKVIEWER *newCDKViewer (CDKSCREEN *cdkscreen,
 			 CDK_CSTRING2 buttons,
 			 int buttonCount,
 			 chtype buttonHighlight,
-			 boolean Box,
-			 boolean shadow)
+			 _bool Box,
+			 _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKVIEWER *viewer = 0;
@@ -174,9 +174,9 @@ int setCDKViewer (CDKVIEWER *viewer,
 		  CDK_CSTRING2 list,
 		  int listSize,
 		  chtype buttonHighlight,
-		  boolean attrInterp,
-		  boolean showLineInfo,
-		  boolean Box)
+		  _bool attrInterp,
+		  _bool showLineInfo,
+		  _bool Box)
 {
    setCDKViewerTitle (viewer, title);
    setCDKViewerHighlight (viewer, buttonHighlight);
@@ -202,7 +202,7 @@ chtype **getCDKViewerTitle (CDKVIEWER *viewer)
    return TitleOf (viewer);
 }
 
-static void setupLine (CDKVIEWER *viewer, boolean interpret, const char
+static void setupLine (CDKVIEWER *viewer, _bool interpret, const char
 		       *list, int x)
 {
    /* Did they ask for attribute interpretation? */
@@ -287,7 +287,7 @@ static void freeLine (CDKVIEWER *viewer, int x)
 /*
  * This function sets the contents of the viewer.
  */
-int setCDKViewerInfo (CDKVIEWER *viewer, CDK_CSTRING2 list, int listSize, boolean interpret)
+int setCDKViewerInfo (CDKVIEWER *viewer, CDK_CSTRING2 list, int listSize, _bool interpret)
 {
    /* *INDENT-EQLS* */
    char filename[CDK_PATHMAX + 2];
@@ -441,11 +441,11 @@ chtype getCDKViewerHighlight (CDKVIEWER *viewer)
 /*
  * This sets whether or not you want to set the viewer info line.
  */
-void setCDKViewerInfoLine (CDKVIEWER *viewer, boolean showLineInfo)
+void setCDKViewerInfoLine (CDKVIEWER *viewer, _bool showLineInfo)
 {
    viewer->showLineInfo = showLineInfo;
 }
-boolean getCDKViewerInfoLine (CDKVIEWER *viewer)
+_bool getCDKViewerInfoLine (CDKVIEWER *viewer)
 {
    return viewer->showLineInfo;
 }
@@ -453,12 +453,12 @@ boolean getCDKViewerInfoLine (CDKVIEWER *viewer)
 /*
  * This sets the widgets box attribute.
  */
-void setCDKViewerBox (CDKVIEWER *viewer, boolean Box)
+void setCDKViewerBox (CDKVIEWER *viewer, _bool Box)
 {
    ObjOf (viewer)->box = Box;
    ObjOf (viewer)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKViewerBox (CDKVIEWER *viewer)
+_bool getCDKViewerBox (CDKVIEWER *viewer)
 {
    return ObjOf (viewer)->box;
 }
@@ -514,7 +514,7 @@ int activateCDKViewer (CDKVIEWER *widget, chtype *actions GCC_UNUSED)
    CDK_CSTRING tempInfo[2];
    char temp[500];
    chtype input;
-   boolean functionKey;
+   _bool functionKey;
    int x;
 
    /* Create the information about the file stats. */
@@ -952,7 +952,7 @@ static int jumpToLine (CDKVIEWER *viewer)
 static void popUpLabel (CDKVIEWER *viewer, CDK_CSTRING2 mesg)
 {
    CDKLABEL *label;
-   boolean functionKey;
+   _bool functionKey;
 
    /* Set up variables. */
    label = newCDKLabel (ScreenOf (viewer), CENTER, CENTER,
@@ -971,8 +971,8 @@ static void popUpLabel (CDKVIEWER *viewer, CDK_CSTRING2 mesg)
 /*
  * This moves the viewer field to the given location.
  */
-static void _moveCDKViewer (CDKOBJS *object, int xplace, int yplace, boolean
-			    relative, boolean refresh_flag)
+static void _moveCDKViewer (CDKOBJS *object, int xplace, int yplace, _bool
+			    relative, _bool refresh_flag)
 {
    /* *INDENT-EQLS* */
    CDKVIEWER *viewer = (CDKVIEWER *)object;
@@ -1017,7 +1017,7 @@ static void _moveCDKViewer (CDKOBJS *object, int xplace, int yplace, boolean
 /*
  * This function draws the viewer widget.
  */
-static void _drawCDKViewer (CDKOBJS *object, boolean Box)
+static void _drawCDKViewer (CDKOBJS *object, _bool Box)
 {
    CDKVIEWER *viewer = (CDKVIEWER *)object;
 

@@ -61,12 +61,12 @@ cdk_<MODEL>slider \- curses slider widget (type <CTYPE>)
 .TP 15
 .B "void drawCDK<MIXED> ("
 .BI "CDK<UPPER> *" "slider",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDK<MIXED> ("
 .BI "CDK<UPPER> *" "slider");
 .TP 15
-.B "boolean getCDK<MIXED>Box ("
+.B "_bool getCDK<MIXED>Box ("
 .BI "CDK<UPPER> *" "slider");
 #if <FLOAT>
 .TP 15
@@ -91,8 +91,8 @@ cdk_<MODEL>slider \- curses slider widget (type <CTYPE>)
 .BI "CDK<UPPER> *" "slider",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDK<UPPER> *newCDK<MIXED> ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -110,8 +110,8 @@ cdk_<MODEL>slider \- curses slider widget (type <CTYPE>)
 #if <FLOAT>
 .BI "int " "digits",
 #endif <FLOAT>
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDK<MIXED> ("
 .BI "CDK<UPPER> *" "slider");
@@ -121,7 +121,7 @@ cdk_<MODEL>slider \- curses slider widget (type <CTYPE>)
 .BI "<CTYPE> " "lowValue",
 .BI "<CTYPE> " "highValue",
 .BI "<CTYPE> " "currentValue",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDK<MIXED>BackgroundAttrib ("
 .BI "CDK<UPPER> *" "slider",
@@ -133,7 +133,7 @@ cdk_<MODEL>slider \- curses slider widget (type <CTYPE>)
 .TP 15
 .B "void setCDK<MIXED>Box ("
 .BI "CDK<UPPER> *" "slider",
-.BI "boolean " "boxWidget");
+.BI "_bool " "boxWidget");
 .TP 15
 .B "void setCDK<MIXED>BoxAttribute ("
 .BI "CDK<UPPER> *" "slider",
@@ -301,7 +301,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

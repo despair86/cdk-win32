@@ -15,7 +15,7 @@ int main (void)
    const char *mesg[5];
    const char *sign[4];
    chtype key;
-   boolean functionKey;
+   _bool functionKey;
 
    cdkscreen = initCDKScreen (NULL);
 

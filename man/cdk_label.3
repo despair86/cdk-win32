@@ -49,12 +49,12 @@ cdk_label \- Creates a managed curses label widget.
 .TP 15
 .B "void drawCDKLabel ("
 .BI "CDKLABEL *" "label",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKLabel ("
 .BI "CDKLABEL *" "label");
 .TP 15
-.B "boolean getCDKLabelBox ("
+.B "_bool getCDKLabelBox ("
 .BI "CDKLABEL *" "label");
 .TP 15
 .B "chtype **getCDKLabelMessage ("
@@ -65,8 +65,8 @@ cdk_label \- Creates a managed curses label widget.
 .BI "CDKLABEL *" "label",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKLABEL *newCDKLabel ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -74,8 +74,8 @@ cdk_label \- Creates a managed curses label widget.
 .BI "int " "ypos",
 .BI "CDK_CONST char **" "message",
 .BI "int " "messageLines",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKLabel ("
 .BI "CDKLABEL *" "label");
@@ -84,7 +84,7 @@ cdk_label \- Creates a managed curses label widget.
 .BI "CDKLABEL *" "label",
 .BI "CDK_CONST char **" "message",
 .BI "int " "messageLines",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKLabelBackgroundAttrib ("
 .BI "CDKLABEL *" "label",
@@ -96,7 +96,7 @@ cdk_label \- Creates a managed curses label widget.
 .TP 15
 .B "void setCDKLabelBox ("
 .BI "CDKLABEL *" "label",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKLabelBoxAttribute ("
 .BI "CDKLABEL *" "label",
@@ -187,7 +187,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

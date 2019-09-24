@@ -78,7 +78,7 @@ struct SSwindow {
    int		widestLine;
    int		saveLines;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
 };
 typedef struct SSwindow CDKSWINDOW;
 typedef void (*SWINDOWCB) (CDKSWINDOW *swindow, chtype input);
@@ -94,8 +94,8 @@ CDKSWINDOW *newCDKSwindow (
 		int		/* width */,
 		const char *	/* title */,
 		int		/* saveLines */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the scrolling window.
@@ -153,7 +153,7 @@ void setCDKSwindow (
 		CDKSWINDOW *	/* swindow */,
 		CDK_CSTRING2	/* info */,
 		int		/* lines */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the contents of the scrolling window.
@@ -172,9 +172,9 @@ chtype **getCDKSwindowContents (
  */
 void setCDKSwindowBox (
 		CDKSWINDOW *	/* swindow */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKSwindowBox (
+_bool getCDKSwindowBox (
 		CDKSWINDOW *	/* swindow */);
 
 /*

@@ -47,8 +47,8 @@ CDKFSELECT *newCDKFselect (CDKSCREEN *cdkscreen,
 			   const char *fAttribute,
 			   const char *lAttribute,
 			   const char *sAttribute,
-			   boolean Box,
-			   boolean shadow)
+			   _bool Box,
+			   _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKFSELECT *fselect  = 0;
@@ -258,8 +258,8 @@ static void _eraseCDKFselect (CDKOBJS *object)
 static void _moveCDKFselect (CDKOBJS *object,
 			     int xplace,
 			     int yplace,
-			     boolean relative,
-			     boolean refresh_flag)
+			     _bool relative,
+			     _bool refresh_flag)
 {
    CDKFSELECT *fselect = (CDKFSELECT *)object;
    /* *INDENT-EQLS* */
@@ -308,7 +308,7 @@ static void _moveCDKFselect (CDKOBJS *object,
  * focus of the scroll widget when drawing on it to get the right highlighting.
  */
 #define SaveFocus(widget) \
-   boolean save = HasFocusObj (ObjOf (widget->scrollField)); \
+   _bool save = HasFocusObj (ObjOf (widget->scrollField)); \
    HasFocusObj (ObjOf (widget->scrollField)) = \
    HasFocusObj (ObjOf (widget->entryField))
 
@@ -332,7 +332,7 @@ static void injectMyScroller (CDKFSELECT *widget, chtype key)
 /*
  * This draws the file selector widget.
  */
-static void _drawCDKFselect (CDKOBJS *object, boolean Box GCC_UNUSED)
+static void _drawCDKFselect (CDKOBJS *object, _bool Box GCC_UNUSED)
 {
    CDKFSELECT *fselect = (CDKFSELECT *)object;
 
@@ -357,7 +357,7 @@ static void _drawCDKFselect (CDKOBJS *object, boolean Box GCC_UNUSED)
 char *activateCDKFselect (CDKFSELECT *fselect, chtype *actions)
 {
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    char *ret = 0;
 
    /* Draw the widget. */
@@ -405,7 +405,7 @@ static int _injectCDKFselect (CDKOBJS *object, chtype input)
 {
    CDKFSELECT *fselect = (CDKFSELECT *)object;
    char *filename;
-   boolean file;
+   _bool file;
    char *ret = unknownString;
    bool complete = FALSE;
 
@@ -471,7 +471,7 @@ void setCDKFselect (CDKFSELECT *fselect,
 		    const char *fileAttribute,
 		    const char *linkAttribute,
 		    const char *sockAttribute,
-		    boolean Box GCC_UNUSED)
+		    _bool Box GCC_UNUSED)
 {
    /* *INDENT-EQLS* */
    CDKSCROLL *fscroll   = fselect->scrollField;
@@ -825,12 +825,12 @@ char *getCDKFselectFileAttribute (CDKFSELECT *fselect)
 /*
  * This sets the box attribute of the widget.
  */
-void setCDKFselectBox (CDKFSELECT *fselect, boolean Box)
+void setCDKFselectBox (CDKFSELECT *fselect, _bool Box)
 {
    ObjOf (fselect)->box = Box;
    ObjOf (fselect)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKFselectBox (CDKFSELECT *fselect)
+_bool getCDKFselectBox (CDKFSELECT *fselect)
 {
    return ObjOf (fselect)->box;
 }
@@ -1023,7 +1023,7 @@ static int displayFileInfoCB (EObjectType objectType GCC_UNUSED,
    char *mesg[10];
    char stringMode[15];
    int intMode;
-   boolean functionKey;
+   _bool functionKey;
 
    filename = fselect->entryField->info;
 

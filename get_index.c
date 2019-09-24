@@ -13,7 +13,7 @@ int getListIndex (CDKSCREEN *screen,
 		  const char *title,
 		  CDK_CSTRING2 list,
 		  int listSize,
-		  boolean numbers)
+		  _bool numbers)
 {
    /* *INDENT-EQLS* */
    CDKSCROLL *scrollp   = 0;

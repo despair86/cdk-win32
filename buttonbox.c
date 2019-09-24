@@ -22,8 +22,8 @@ CDKBUTTONBOX *newCDKButtonbox (CDKSCREEN *cdkscreen,
 			       CDK_CSTRING2 buttons,
 			       int buttonCount,
 			       chtype highlight,
-			       boolean Box,
-			       boolean shadow)
+			       _bool Box,
+			       _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKBUTTONBOX *buttonbox      = 0;
@@ -169,7 +169,7 @@ CDKBUTTONBOX *newCDKButtonbox (CDKSCREEN *cdkscreen,
 int activateCDKButtonbox (CDKBUTTONBOX *buttonbox, chtype *actions)
 {
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    int ret;
 
    /* Draw the buttonbox box. */
@@ -346,7 +346,7 @@ static int _injectCDKButtonbox (CDKOBJS *object, chtype input)
 /*
  * This sets multiple attributes of the widget.
  */
-void setCDKButtonbox (CDKBUTTONBOX *buttonbox, chtype highlight, boolean Box)
+void setCDKButtonbox (CDKBUTTONBOX *buttonbox, chtype highlight, _bool Box)
 {
    setCDKButtonboxHighlight (buttonbox, highlight);
    setCDKButtonboxBox (buttonbox, Box);
@@ -367,12 +367,12 @@ chtype getCDKButtonboxHighlight (CDKBUTTONBOX *buttonbox)
 /*
  * This sets the box attribute of the widget.
  */
-void setCDKButtonboxBox (CDKBUTTONBOX *buttonbox, boolean Box)
+void setCDKButtonboxBox (CDKBUTTONBOX *buttonbox, _bool Box)
 {
    ObjOf (buttonbox)->box = Box;
    ObjOf (buttonbox)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKButtonboxBox (CDKBUTTONBOX *buttonbox)
+_bool getCDKButtonboxBox (CDKBUTTONBOX *buttonbox)
 {
    return ObjOf (buttonbox)->box;
 }
@@ -393,7 +393,7 @@ static void _setBKattrButtonbox (CDKOBJS *object, chtype attrib)
 /*
  * This draws the buttonbox box widget.
  */
-static void _drawCDKButtonbox (CDKOBJS *object, boolean Box)
+static void _drawCDKButtonbox (CDKOBJS *object, _bool Box)
 {
    CDKBUTTONBOX *buttonbox = (CDKBUTTONBOX *)object;
 
@@ -482,8 +482,8 @@ static void _eraseCDKButtonbox (CDKOBJS *object)
 static void _moveCDKButtonbox (CDKOBJS *object,
 			       int xplace,
 			       int yplace,
-			       boolean relative,
-			       boolean refresh_flag)
+			       _bool relative,
+			       _bool refresh_flag)
 {
    CDKBUTTONBOX *buttonbox = (CDKBUTTONBOX *)object;
    /* *INDENT-EQLS* */

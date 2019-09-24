@@ -227,9 +227,9 @@ typedef enum {vFRONT, vBACK, vBOTH} EStripType;
 typedef enum {vEARLY_EXIT, vESCAPE_HIT, vNORMAL, vNEVER_ACTIVATED, vERROR} EExitType;
 
 /*
- * This defines a boolean type.
+ * This defines a _bool type.
  */
-typedef int boolean;
+typedef int _bool;
 
 /*
  * Declare miscellaneous defines.

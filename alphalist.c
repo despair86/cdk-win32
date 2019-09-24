@@ -31,8 +31,8 @@ CDKALPHALIST *newCDKAlphalist (CDKSCREEN *cdkscreen,
 			       int listSize,
 			       chtype fillerChar,
 			       chtype highlight,
-			       boolean Box,
-			       boolean shadow)
+			       _bool Box,
+			       _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKALPHALIST *alphalist      = 0;
@@ -219,8 +219,8 @@ static void _eraseCDKAlphalist (CDKOBJS *object)
 static void _moveCDKAlphalist (CDKOBJS *object,
 			       int xplace,
 			       int yplace,
-			       boolean relative,
-			       boolean refresh_flag)
+			       _bool relative,
+			       _bool refresh_flag)
 {
    CDKALPHALIST *alphalist = (CDKALPHALIST *)object;
    /* *INDENT-EQLS* */
@@ -272,7 +272,7 @@ static void _moveCDKAlphalist (CDKOBJS *object,
  * focus of the scroll widget when drawing on it to get the right highlighting.
  */
 #define SaveFocus(widget) \
-   boolean save = HasFocusObj (ObjOf (widget->scrollField)); \
+   _bool save = HasFocusObj (ObjOf (widget->scrollField)); \
    HasFocusObj (ObjOf (widget->scrollField)) = \
    HasFocusObj (ObjOf (widget->entryField))
 
@@ -296,7 +296,7 @@ static void injectMyScroller (CDKALPHALIST *widget, chtype key)
 /*
  * This draws the file selector widget.
  */
-static void _drawCDKAlphalist (CDKOBJS *obj, boolean Box GCC_UNUSED)
+static void _drawCDKAlphalist (CDKOBJS *obj, _bool Box GCC_UNUSED)
 {
    CDKALPHALIST *alphalist = (CDKALPHALIST *)obj;
 
@@ -370,7 +370,7 @@ void setCDKAlphalist (CDKALPHALIST *alphalist,
 		      int listSize,
 		      chtype fillerChar,
 		      chtype highlight,
-		      boolean Box)
+		      _bool Box)
 {
    setCDKAlphalistContents (alphalist, list, listSize);
    setCDKAlphalistFillerChar (alphalist, fillerChar);
@@ -464,13 +464,13 @@ chtype getCDKAlphalistHighlight (CDKALPHALIST *alphalist)
 /*
  * This sets whether or not the widget will be drawn with a box.
  */
-void setCDKAlphalistBox (CDKALPHALIST *alphalist, boolean Box)
+void setCDKAlphalistBox (CDKALPHALIST *alphalist, _bool Box)
 {
    ObjOf (alphalist)->box = Box;
    ObjOf (alphalist)->borderSize = Box ? 1 : 0;
 }
 
-boolean getCDKAlphalistBox (CDKALPHALIST *alphalist)
+_bool getCDKAlphalistBox (CDKALPHALIST *alphalist)
 {
    return ObjOf (alphalist)->box;
 }

@@ -79,7 +79,7 @@ struct S<MIXED> {
    int		digits;
 #endif <FLOAT>
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
 };
 typedef struct S<MIXED> CDK<UPPER>;
 
@@ -102,8 +102,8 @@ CDK<UPPER> *newCDK<MIXED> (
 #if <FLOAT>
 		int		/* digits */,
 #endif <FLOAT>
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the widget.
@@ -125,7 +125,7 @@ void setCDK<MIXED> (
 		<CTYPE>		/* low */,
 		<CTYPE>		/* high */,
 		<CTYPE>		/* value */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * These set/get the low and high values.
@@ -168,9 +168,9 @@ void setCDK<MIXED>Value (
  */
 void setCDK<MIXED>Box (
 		CDK<UPPER> *	/* widget */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDK<MIXED>Box (
+_bool getCDK<MIXED>Box (
 		CDK<UPPER> *	/* widget */);
 
 /*

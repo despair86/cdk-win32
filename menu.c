@@ -132,7 +132,7 @@ CDKMENU *newCDKMenu (CDKSCREEN *cdkscreen,
 int activateCDKMenu (CDKMENU *menu, chtype *actions)
 {
    chtype input;
-   boolean functionKey;
+   _bool functionKey;
    int ret;
 
    /* Draw in the screen. */
@@ -442,7 +442,7 @@ void eraseCDKMenuSubwin (CDKMENU *menu)
 /*
  * Draw the menu.
  */
-static void _drawCDKMenu (CDKOBJS *object, boolean Box GCC_UNUSED)
+static void _drawCDKMenu (CDKOBJS *object, _bool Box GCC_UNUSED)
 {
    CDKMENU *menu = (CDKMENU *)object;
    int x;
@@ -461,8 +461,8 @@ static void _drawCDKMenu (CDKOBJS *object, boolean Box GCC_UNUSED)
 static void _moveCDKMenu (CDKOBJS *object,
 			  int xplace,
 			  int yplace,
-			  boolean relative,
-			  boolean refresh_flag)
+			  _bool relative,
+			  _bool refresh_flag)
 {
    CDKMENU *menu = (CDKMENU *)object;
    /* *INDENT-EQLS* */

@@ -57,7 +57,7 @@ cdk_dialog \- curses dialog widget
 .TP 15
 .B "void drawCDKDialog ("
 .BI "CDKDIALOG *" "dialog",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void drawCDKDialogButtons ("
 .BI "CDKDIALOG *" "dialog");
@@ -65,16 +65,16 @@ cdk_dialog \- curses dialog widget
 .B "void eraseCDKDialog ("
 .BI "CDKDIALOG *" "dialog");
 .TP 15
-.B "boolean getCDKDialog ("
+.B "_bool getCDKDialog ("
 .BI "CDKDIALOG *" "dialog");
 .TP 15
-.B "boolean getCDKDialogBox ("
+.B "_bool getCDKDialogBox ("
 .BI "CDKDIALOG *" "dialog");
 .TP 15
 .B "chtype getCDKDialogHighlight ("
 .BI "CDKDIALOG *" "dialog");
 .TP 15
-.B "boolean getCDKDialogSeparator ("
+.B "_bool getCDKDialogSeparator ("
 .BI "CDKDIALOG *" "dialog");
 .TP 15
 .B "int injectCDKDialog ("
@@ -85,8 +85,8 @@ cdk_dialog \- curses dialog widget
 .BI "CDKDIALOG *" "dialog",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKDIALOG *newCDKDialog ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -97,22 +97,22 @@ cdk_dialog \- curses dialog widget
 .BI "CDK_CONST char ** " "buttons" ,
 .BI "int " "buttonCount",
 .BI "chtype " "highlight" ,
-.BI "boolean " "separator",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "separator",
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKDialog ("
 .BI "CDKDIALOG *" "dialog");
 .TP 15
 .B "void setCDKDialogBox ("
 .BI "CDKDIALOG *" "dialog",
-.BI "boolean " "boxWidget");
+.BI "_bool " "boxWidget");
 .TP 15
 .B "void setCDKDialog ("
 .BI "CDKDIALOG *" "dialog",
 .BI "chtype " "highlight",
-.BI "boolean " "separator",
-.BI "boolean " "box");
+.BI "_bool " "separator",
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKDialogBackgroundAttrib ("
 .BI "CDKDIALOG *" "dialog",
@@ -124,7 +124,7 @@ cdk_dialog \- curses dialog widget
 .TP 15
 .B "void setCDKDialogBox ("
 .BI "CDKDIALOG *" "dialog",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKDialogBoxAttribute ("
 .BI "CDKDIALOG *" "dialog",
@@ -158,7 +158,7 @@ cdk_dialog \- curses dialog widget
 .TP 15
 .B "void setCDKDialogSeparator ("
 .BI "CDKDIALOG *" "dialog",
-.BI "boolean " "separator");
+.BI "_bool " "separator");
 .TP 15
 .B "void setCDKDialogULChar ("
 .BI "CDKDIALOG *" "dialog",
@@ -285,7 +285,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which states
+The final parameter \fBrefresh\fR is a _bool value which states
 whether the widget will get refreshed after the move.
 .RE
 .TP 5
@@ -411,7 +411,7 @@ The parameter \fBdata\fR points to data passed to the callback function.
 To learn more about post-processing see \fIcdk_process (3)\fR.
 .TP 5
 .B setCDKDialogSeparator
-sets the boolean flag whether the widget will be drawn with the
+sets the _bool flag whether the widget will be drawn with the
 separator bar between the buttons and the message area.
 .TP 5
 .B setCDKDialogULChar

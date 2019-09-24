@@ -26,7 +26,7 @@ void positionCDKObject (CDKOBJS *obj, WINDOW *win)
    int endY          = begY + getmaxy (WindowOf (obj));
 
    chtype key;
-   boolean functionKey;
+   _bool functionKey;
 
    /* Let them move the widget around until they hit return. */
    while ((key = (chtype)getchCDKObject (obj, &functionKey)) != KEY_ENTER)

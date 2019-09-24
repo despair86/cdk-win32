@@ -44,8 +44,8 @@ int main (int argc, char **argv)
    int x, fields, j1, j2;
 
    CDK_PARAMS params;
-   boolean boxWidget;
-   boolean shadowWidget;
+   _bool boxWidget;
+   _bool shadowWidget;
    char *buttons;
    char *choices;
    char *filename;

@@ -198,7 +198,7 @@ char *CDKparamString2 (CDK_PARAMS * params, int option, const char *missing)
 }
 
 /*
- * Retrieve an integer (or boolean) option value from the parsed command-line.
+ * Retrieve an integer (or _bool) option value from the parsed command-line.
  * (prefer: CDKparamNumber).
  */
 int CDKparamValue (CDK_PARAMS * params, int option, int missing)

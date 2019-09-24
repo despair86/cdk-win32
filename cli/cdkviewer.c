@@ -39,10 +39,10 @@ int main (int argc, char **argv)
    int j1, j2;
 
    CDK_PARAMS params;
-   boolean boxWidget;
-   boolean interpret;
-   boolean shadowWidget;
-   boolean showInfoLine;
+   _bool boxWidget;
+   _bool interpret;
+   _bool shadowWidget;
+   _bool showInfoLine;
    char *buttons;
    char *title;
    int height;

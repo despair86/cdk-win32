@@ -72,12 +72,12 @@ cdk_scroll \- curses scrolling list widget.
 .TP 15
 .B "void drawCDKScroll ("
 .BI "CDKSCROLL *" "scroll",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKScroll ("
 .BI "CDKSCROLL *" "scroll");
 .TP 15
-.B "boolean getCDKScrollBox ("
+.B "_bool getCDKScrollBox ("
 .BI "CDKSCROLL *" "scroll");
 .TP 15
 .B "int getCDKScrollCurrent("
@@ -109,8 +109,8 @@ cdk_scroll \- curses scrolling list widget.
 .BI "CDKSCROLL *" "scroll",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKSCROLL *newCDKScroll ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -122,10 +122,10 @@ cdk_scroll \- curses scrolling list widget.
 .BI "const char *" "title",
 .BI "CDK_CONST char **" "itemList",
 .BI "int " "items",
-.BI "boolean " "numbers",
+.BI "_bool " "numbers",
 .BI "chtype " "highlight",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKScroll ("
 .BI "CDKSCROLL *" "scroll");
@@ -134,9 +134,9 @@ cdk_scroll \- curses scrolling list widget.
 .BI "CDKSCROLL *" "scroll",
 .BI "CDK_CONST char **" "itemList",
 .BI "int " "items",
-.BI "boolean " "numbers",
+.BI "_bool " "numbers",
 .BI "chtype " "highlight",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKScrollBackgroundAttrib ("
 .BI "CDKSCROLL *" "scroll",
@@ -148,7 +148,7 @@ cdk_scroll \- curses scrolling list widget.
 .TP 15
 .B "void setCDKScrollBox ("
 .BI "CDKSCROLL *" "scroll",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKScrollBoxAttribute ("
 .BI "CDKSCROLL *" "scroll",
@@ -174,7 +174,7 @@ cdk_scroll \- curses scrolling list widget.
 .BI "CDKSCROLL *" "scroll",
 .BI "CDK_CONST char **" "itemList",
 .BI "int " "listSize",
-.BI "boolean " "numbers");
+.BI "_bool " "numbers");
 .TP 15
 .B "void setCDKScrollLLChar ("
 .BI "CDKSCROLL *" "scroll",
@@ -363,7 +363,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which states
+The final parameter \fBrefresh\fR is a _bool value which states
 whether the widget will get refreshed after the move.
 .RE
 .TP 5

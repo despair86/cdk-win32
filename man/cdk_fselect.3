@@ -74,12 +74,12 @@ cdk_fselect \- curses file selector widget.
 .TP 15
 .B "void drawCDKFselect ("
 .BI "CDKFSELECT *" "fselect",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKFselect ("
 .BI "CDKFSELECT *" "fselect");
 .TP 15
-.B "boolean getCDKFselectBox ("
+.B "_bool getCDKFselectBox ("
 .BI "CDKFSELECT *" "fselect");
 .TP 15
 .B "char **getCDKFselectContents ("
@@ -122,8 +122,8 @@ cdk_fselect \- curses file selector widget.
 .BI "CDKFSELECT *" "fselect",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKFSELECT *newCDKFselect ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -140,8 +140,8 @@ cdk_fselect \- curses file selector widget.
 .BI "const char *" "fileAttribute",
 .BI "const char *" "linkAttribute",
 .BI "const char *" "sockAttribute",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKFselect ("
 .BI "CDKFSELECT *" "fselect");
@@ -156,7 +156,7 @@ cdk_fselect \- curses file selector widget.
 .BI "const char *" "fileAttribute",
 .BI "const char *" "linkAttribute",
 .BI "const char *" "sockAttribute",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKFselectBackgroundAttrib ("
 .BI "CDKFSELECT *" "fselect",
@@ -168,7 +168,7 @@ cdk_fselect \- curses file selector widget.
 .TP 15
 .B "void setCDKFselectBox ("
 .BI "CDKFSELECT *" "fselect",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKFselectBoxAttribute ("
 .BI "CDKFSELECT *" "fselect",
@@ -373,7 +373,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which states
+The final parameter \fBrefresh\fR is a _bool value which states
 whether the widget will get refreshed after the move.
 .RE
 .TP 5

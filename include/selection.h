@@ -90,8 +90,8 @@ CDKSELECTION *newCDKSelection (
 		CDK_CSTRING2	/* choices */,
 		int		/* choiceSize */,
 		chtype		/* highlight */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the selection widget.
@@ -137,7 +137,7 @@ void setCDKSelection (
 		CDKSELECTION *	/* selection */,
 		chtype		/* highlight */,
 		int *		/* defChoices */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the contents of the selection list.
@@ -225,9 +225,9 @@ int getCDKSelectionMode (
  */
 void setCDKSelectionBox (
 		CDKSELECTION *	/* selection */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKSelectionBox (
+_bool getCDKSelectionBox (
 		CDKSELECTION *	/* selection */);
 
 /*

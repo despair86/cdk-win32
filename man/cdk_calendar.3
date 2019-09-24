@@ -63,12 +63,12 @@ cdk_calendar \- curses calendar widget.
 .BI "CDKCALENDAR *" "calendar");
 .TP 15
 .B "void drawCDKCalendar (CDKCALENDAR *" "calendar",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKCalendar ("
 .BI "CDKCALENDAR *" "calendar");
 .TP 15
-.B "boolean getCDKCalendarBox ("
+.B "_bool getCDKCalendarBox ("
 .BI "CDKCALENDAR *" "calendar");
 .TP 15
 .B "void getCDKCalendarDate (CDKCALENDAR *" "calendar",
@@ -102,8 +102,8 @@ cdk_calendar \- curses calendar widget.
 .BI "CDKCALENDAR *" "calendar",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKCALENDAR *newCDKCalendar (CDKSCREEN *" "cdkscreen",
 .BI "int " "xpos",
@@ -116,8 +116,8 @@ cdk_calendar \- curses calendar widget.
 .BI "chtype " "monthAttrib",
 .BI "chtype " "yearAttrib",
 .BI "chtype " "highlight",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKCalendar ("
 .BI "CDKCALENDAR *" "calendar");
@@ -137,7 +137,7 @@ cdk_calendar \- curses calendar widget.
 .BI "chtype " "monthAttrib",
 .BI "chtype " "yearAttrib",
 .BI "chtype " "highlight",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKCalendarBackgroundAttrib ("
 .BI "CDKCALENDAR *" "calendar",
@@ -149,7 +149,7 @@ cdk_calendar \- curses calendar widget.
 .TP 15
 .B "void setCDKCalendarBox ("
 .BI "CDKCALENDAR *" "calendar",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B setCDKCalendarBoxAttribute ("
 .BI "CDKCALENDAR *" "calendar",
@@ -348,7 +348,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

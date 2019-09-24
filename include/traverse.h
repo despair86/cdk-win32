@@ -50,7 +50,7 @@
  * SUCH DAMAGE.
  */
 
-typedef boolean (*CHECK_KEYCODE)(int /* keyCode */, int /* functionKey */);
+typedef _bool (*CHECK_KEYCODE)(int /* keyCode */, int /* functionKey */);
 
 extern CDKOBJS *getCDKFocusCurrent (CDKSCREEN * /* screen */);
 extern CDKOBJS *setCDKFocusCurrent (CDKSCREEN * /*screen */, CDKOBJS * /* obj */);
@@ -67,7 +67,7 @@ extern void exitOKCDKScreen (CDKSCREEN * /* screen */);
 extern void exitOKCDKScreenOf (CDKOBJS * /* obj */);
 extern void resetCDKScreen (CDKSCREEN * /* screen */);
 extern void resetCDKScreenOf (CDKOBJS * /* obj */);
-extern void traverseCDKOnce (CDKSCREEN * /*screen */, CDKOBJS * /*curobj */, int /* keyCode */, boolean /* functionKey */, CHECK_KEYCODE /*funcMenuKey */);
+extern void traverseCDKOnce (CDKSCREEN * /*screen */, CDKOBJS * /*curobj */, int /* keyCode */, _bool /* functionKey */, CHECK_KEYCODE /*funcMenuKey */);
 
 #endif /* CDKTRAVERSE_H */
 #endif /* CDKINCLUDES */

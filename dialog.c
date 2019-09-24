@@ -19,9 +19,9 @@ CDKDIALOG *newCDKDialog (CDKSCREEN *cdkscreen,
 			 CDK_CSTRING2 buttonLabel,
 			 int buttonCount,
 			 chtype highlight,
-			 boolean separator,
-			 boolean Box,
-			 boolean shadow)
+			 _bool separator,
+			 _bool Box,
+			 _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKDIALOG *dialog    = 0;
@@ -140,7 +140,7 @@ CDKDIALOG *newCDKDialog (CDKSCREEN *cdkscreen,
 int activateCDKDialog (CDKDIALOG *dialog, chtype *actions)
 {
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    int ret;
 
    /* Draw the dialog box. */
@@ -314,8 +314,8 @@ static int _injectCDKDialog (CDKOBJS *object, chtype input)
 static void _moveCDKDialog (CDKOBJS *object,
 			    int xplace,
 			    int yplace,
-			    boolean relative,
-			    boolean refresh_flag)
+			    _bool relative,
+			    _bool refresh_flag)
 {
    CDKDIALOG *dialog = (CDKDIALOG *)object;
    /* *INDENT-EQLS* */
@@ -360,7 +360,7 @@ static void _moveCDKDialog (CDKOBJS *object,
 /*
  * This function draws the dialog widget.
  */
-static void _drawCDKDialog (CDKOBJS *object, boolean Box)
+static void _drawCDKDialog (CDKOBJS *object, _bool Box)
 {
    CDKDIALOG *dialog = (CDKDIALOG *)object;
    int x = 0;
@@ -439,7 +439,7 @@ static void _eraseCDKDialog (CDKOBJS *object)
 /*
  * This sets attributes of the dialog box.
  */
-void setCDKDialog (CDKDIALOG *dialog, chtype highlight, boolean separator, boolean Box)
+void setCDKDialog (CDKDIALOG *dialog, chtype highlight, _bool separator, _bool Box)
 {
    setCDKDialogHighlight (dialog, highlight);
    setCDKDialogSeparator (dialog, separator);
@@ -461,11 +461,11 @@ chtype getCDKDialogHighlight (CDKDIALOG *dialog)
 /*
  * This sets whether or not the dialog box will have a separator line.
  */
-void setCDKDialogSeparator (CDKDIALOG *dialog, boolean separator)
+void setCDKDialogSeparator (CDKDIALOG *dialog, _bool separator)
 {
    dialog->separator = separator;
 }
-boolean getCDKDialogSeparator (CDKDIALOG *dialog)
+_bool getCDKDialogSeparator (CDKDIALOG *dialog)
 {
    return dialog->separator;
 }
@@ -473,12 +473,12 @@ boolean getCDKDialogSeparator (CDKDIALOG *dialog)
 /*
  * This sets the box attribute of the widget.
  */
-void setCDKDialogBox (CDKDIALOG *dialog, boolean Box)
+void setCDKDialogBox (CDKDIALOG *dialog, _bool Box)
 {
    ObjOf (dialog)->box = Box;
    ObjOf (dialog)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKDialogBox (CDKDIALOG *dialog)
+_bool getCDKDialogBox (CDKDIALOG *dialog)
 {
    return ObjOf (dialog)->box;
 }

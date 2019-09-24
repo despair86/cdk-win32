@@ -121,8 +121,8 @@ struct SMatrix {
    int		oldvrow;
    int		oldvcol;
    EExitType	exitType;
-   boolean	boxCell;
-   boolean	shadow;
+   _bool	boxCell;
+   _bool	shadow;
    chtype	highlight;
    int		dominant;
    chtype	filler;
@@ -149,9 +149,9 @@ CDKMATRIX *newCDKMatrix (
 		int		/* colspace */,
 		chtype		/* filler */,
 		int		/* dominantAttrib */,
-		boolean		/* boxMatrix */,
-		boolean		/* boxCell */,
-		boolean		/* shadow */);
+		_bool		/* boxMatrix */,
+		_bool		/* boxCell */,
+		_bool		/* shadow */);
 
 /*
  * This activates the matrix.
@@ -273,9 +273,9 @@ int moveToCDKMatrixCell (
  */
 void setCDKMatrixBox (
 		CDKMATRIX *	/* matrix */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKMatrixBox (
+_bool getCDKMatrixBox (
 		CDKMATRIX *	/* matrix */);
 
 /*

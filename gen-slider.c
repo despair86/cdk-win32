@@ -32,8 +32,8 @@ CDK<UPPER> *newCDK<MIXED> (CDKSCREEN *cdkscreen,
 #if <FLOAT>
 			   int digits,
 #endif <FLOAT>
-			   boolean Box,
-			   boolean shadow)
+			   _bool Box,
+			   _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDK<UPPER> *widget   = 0;
@@ -213,7 +213,7 @@ CDK<UPPER> *newCDK<MIXED> (CDKSCREEN *cdkscreen,
    if (actions == 0)
    {
       chtype input = 0;
-      boolean functionKey;
+      _bool functionKey;
 
       for (;;)
       {
@@ -565,8 +565,8 @@ static int _injectCDK<MIXED> (CDKOBJS *object, chtype input)
 static void _moveCDK<MIXED> (CDKOBJS *object,
 			     int xplace,
 			     int yplace,
-			     boolean relative,
-			     boolean refresh_flag)
+			     _bool relative,
+			     _bool refresh_flag)
 {
    /* *INDENT-EQLS* */
    CDK<UPPER> *widget = (CDK<UPPER> *)object;
@@ -613,7 +613,7 @@ static void _moveCDK<MIXED> (CDKOBJS *object,
 /*
  * This function draws the widget.
  */
-static void _drawCDK<MIXED> (CDKOBJS *object, boolean Box)
+static void _drawCDK<MIXED> (CDKOBJS *object, _bool Box)
 {
    CDK<UPPER> *widget = (CDK<UPPER> *)object;
 
@@ -776,7 +776,7 @@ void setCDK<MIXED> (CDK<UPPER> *widget,
 		    <CTYPE> low,
 		    <CTYPE> high,
 		    <CTYPE> value,
-		    boolean Box)
+		    _bool Box)
 {
    setCDK<MIXED>LowHigh (widget, low, high);
    setCDK<MIXED>Value (widget, value);
@@ -843,12 +843,12 @@ void setCDK<MIXED>LowHigh (CDK<UPPER> *widget, <CTYPE> low, <CTYPE> high)
 /*
  * This sets the widget's box attribute.
  */
-void setCDK<MIXED>Box (CDK<UPPER> *widget, boolean Box)
+void setCDK<MIXED>Box (CDK<UPPER> *widget, _bool Box)
 {
    ObjOf (widget)->box = Box;
    ObjOf (widget)->borderSize = Box ? 1 : 0;
 }
-boolean getCDK<MIXED>Box (CDK<UPPER> *widget)
+_bool getCDK<MIXED>Box (CDK<UPPER> *widget)
 {
    return ObjOf (widget)->box;
 }

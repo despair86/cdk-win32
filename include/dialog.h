@@ -81,8 +81,8 @@ struct SDialogBox {
    int		boxWidth;
    int		boxHeight;
    EExitType	exitType;
-   boolean	separator;
-   boolean	shadow;
+   _bool	separator;
+   _bool	shadow;
    chtype	highlight;
 };
 typedef struct SDialogBox CDKDIALOG;
@@ -99,9 +99,9 @@ CDKDIALOG *newCDKDialog (
 		CDK_CSTRING2	/* buttons */,
 		int		/* buttonCount */,
 		chtype		/* highlight */,
-		boolean		/* separator */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* separator */,
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the widget.
@@ -121,8 +121,8 @@ int activateCDKDialog (
 void setCDKDialog (
 		CDKDIALOG *	/* dialog */,
 		chtype		/* highlight */,
-		boolean		/* separator */,
-		boolean		/* Box */);
+		_bool		/* separator */,
+		_bool		/* Box */);
 
 /*
  * This sets the highlight attribute for the buttons.
@@ -139,9 +139,9 @@ chtype getCDKDialogHighlight (
  */
 void setCDKDialogSeparator (
 		CDKDIALOG *	/* dialog */,
-		boolean		/* separator */);
+		_bool		/* separator */);
 
-boolean getCDKDialogSeparator (
+_bool getCDKDialogSeparator (
 		CDKDIALOG *	/* dialog */);
 
 /*
@@ -149,9 +149,9 @@ boolean getCDKDialogSeparator (
  */
 void setCDKDialogBox (
 		CDKDIALOG *	/* dialog */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKDialogBox (
+_bool getCDKDialogBox (
 		CDKDIALOG *	/* dialog */);
 
 /*

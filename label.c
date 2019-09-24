@@ -16,8 +16,8 @@ CDKLABEL *newCDKLabel (CDKSCREEN *cdkscreen,
 		       int yplace,
 		       CDK_CSTRING2 mesg,
 		       int rows,
-		       boolean Box,
-		       boolean shadow)
+		       _bool Box,
+		       _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKLABEL *label      = 0;
@@ -116,7 +116,7 @@ void activateCDKLabel (CDKLABEL *label, chtype *actions GCC_UNUSED)
 /*
  * This sets multiple attributes of the widget.
  */
-void setCDKLabel (CDKLABEL *label, CDK_CSTRING2 mesg, int lines, boolean Box)
+void setCDKLabel (CDKLABEL *label, CDK_CSTRING2 mesg, int lines, _bool Box)
 {
    setCDKLabelMessage (label, mesg, lines);
    setCDKLabelBox (label, Box);
@@ -169,12 +169,12 @@ chtype **getCDKLabelMessage (CDKLABEL *label, int *size)
 /*
  * This sets the box flag for the label widget.
  */
-void setCDKLabelBox (CDKLABEL *label, boolean Box)
+void setCDKLabelBox (CDKLABEL *label, _bool Box)
 {
    ObjOf (label)->box = Box;
    ObjOf (label)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKLabelBox (CDKLABEL *label)
+_bool getCDKLabelBox (CDKLABEL *label)
 {
    return ObjOf (label)->box;
 }
@@ -195,7 +195,7 @@ static void _setBKattrLabel (CDKOBJS *object, chtype attrib)
 /*
  * This draws the label widget.
  */
-static void _drawCDKLabel (CDKOBJS *object, boolean Box GCC_UNUSED)
+static void _drawCDKLabel (CDKOBJS *object, _bool Box GCC_UNUSED)
 {
    CDKLABEL *label = (CDKLABEL *)object;
    int x = 0;
@@ -248,8 +248,8 @@ static void _eraseCDKLabel (CDKOBJS *object)
 static void _moveCDKLabel (CDKOBJS *object,
 			   int xplace,
 			   int yplace,
-			   boolean relative,
-			   boolean refresh_flag)
+			   _bool relative,
+			   _bool refresh_flag)
 {
    CDKLABEL *label = (CDKLABEL *)object;
    /* *INDENT-EQLS* */
@@ -322,7 +322,7 @@ static void _destroyCDKLabel (CDKOBJS *object)
 char waitCDKLabel (CDKLABEL *label, char key)
 {
    int code;
-   boolean functionKey;
+   _bool functionKey;
 
    /* If the key is null, we'll accept anything. */
    if (key == 0)

@@ -96,7 +96,7 @@ struct SCalendar {
    int		boxHeight;
    int		xOffset;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
    char *	DayName;
    char *	MonthName[MAX_MONTHS];
    int		weekBase;	/* starting day of week (Sunday=0, Monday=1) */
@@ -118,8 +118,8 @@ CDKCALENDAR *newCDKCalendar (
 		chtype		/* monthAttrib */,
 		chtype		/* yearAttrib */,
 		chtype		/* highlight */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the calendar widget.
@@ -145,7 +145,7 @@ void setCDKCalendar (
 		chtype		/* monthAttrib */,
 		chtype		/* yearAttrib */,
 		chtype		/* highlight */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the date of the calendar.
@@ -207,9 +207,9 @@ chtype getCDKCalendarHighlight (
  */
 void setCDKCalendarBox (
 		CDKCALENDAR *	/* calendar */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKCalendarBox (
+_bool getCDKCalendarBox (
 		CDKCALENDAR *	/* calendar */);
 
 /*

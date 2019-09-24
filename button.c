@@ -18,8 +18,8 @@ CDKBUTTON *newCDKButton (CDKSCREEN *cdkscreen,
 			 int yplace,
 			 const char *text,
 			 tButtonCallback callback,
-			 boolean Box,
-			 boolean shadow)
+			 _bool Box,
+			 _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKBUTTON *button    = 0;
@@ -97,7 +97,7 @@ CDKBUTTON *newCDKButton (CDKSCREEN *cdkscreen,
 int activateCDKButton (CDKBUTTON *button, chtype *actions)
 {
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    int ret;
 
    drawCDKButton (button, ObjOf (button)->box);
@@ -140,7 +140,7 @@ int activateCDKButton (CDKBUTTON *button, chtype *actions)
 /*
  * This sets multiple attributes of the widget.
  */
-void setCDKButton (CDKBUTTON *button, const char *mesg, boolean Box)
+void setCDKButton (CDKBUTTON *button, const char *mesg, _bool Box)
 {
    setCDKButtonMessage (button, mesg);
    setCDKButtonBox (button, Box);
@@ -175,13 +175,13 @@ chtype *getCDKButtonMessage (CDKBUTTON *button)
 /*
  * This sets the box flag for the button widget.
  */
-void setCDKButtonBox (CDKBUTTON *button, boolean Box)
+void setCDKButtonBox (CDKBUTTON *button, _bool Box)
 {
    ObjOf (button)->box = Box;
    ObjOf (button)->borderSize = Box ? 1 : 0;
 }
 
-boolean getCDKButtonBox (CDKBUTTON *button)
+_bool getCDKButtonBox (CDKBUTTON *button)
 {
    return ObjOf (button)->box;
 }
@@ -229,7 +229,7 @@ static void drawCDKButtonText (CDKBUTTON *button)
 /*
  * This draws the button widget.
  */
-static void _drawCDKButton (CDKOBJS *object, boolean Box GCC_UNUSED)
+static void _drawCDKButton (CDKOBJS *object, _bool Box GCC_UNUSED)
 {
    CDKBUTTON *button = (CDKBUTTON *)object;
 
@@ -268,8 +268,8 @@ static void _eraseCDKButton (CDKOBJS *object)
 static void _moveCDKButton (CDKOBJS *object,
 			    int xplace,
 			    int yplace,
-			    boolean relative,
-			    boolean refresh_flag)
+			    _bool relative,
+			    _bool refresh_flag)
 {
    CDKBUTTON *button = (CDKBUTTON *)object;
    int currentX = getbegx (button->win);
@@ -321,7 +321,7 @@ void positionCDKButton (CDKBUTTON *button)
    int origX = getbegx (button->win);
    int origY = getbegy (button->win);
    chtype key = (chtype)0;
-   boolean functionKey;
+   _bool functionKey;
 
    /* Let them move the widget around until they hit return. */
    while (key != KEY_ENTER)

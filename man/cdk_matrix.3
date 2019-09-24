@@ -66,12 +66,12 @@ cdk_matrix \- curses matrix widget.
 .TP 15
 .B "void drawCDKMatrix ("
 .BI "CDKMATRIX *" "matrix",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKMatrix ("
 .BI "CDKMATRIX *" "matrix");
 .TP 15
-.B "boolean getCDKMatrixBox ("
+.B "_bool getCDKMatrixBox ("
 .BI "CDKMENTRY *" "matrix");
 .TP 15
 .B "char * getCDKMatrixCell ("
@@ -98,8 +98,8 @@ cdk_matrix \- curses matrix widget.
 .BI "CDKMATRIX *" "matrix",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "int moveToCDKMatrixCell ("
 .BI "CDKMATRIX *" "matrix",
@@ -123,9 +123,9 @@ cdk_matrix \- curses matrix widget.
 .BI "int " "colSpace",
 .BI "chtype " "filler",
 .BI "int " "dominantAttribute",
-.BI "boolean " "boxMatrix",
-.BI "boolean " "boxCell",
-.BI "boolean " "shadow");
+.BI "_bool " "boxMatrix",
+.BI "_bool " "boxCell",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKMatrix ("
 .BI "CDKMATRIX *" "matrix");
@@ -146,7 +146,7 @@ cdk_matrix \- curses matrix widget.
 .TP 15
 .B "void setCDKMatrixBox ("
 .BI "CDKMENTRY *" "matrix",
-.BI "boolean " "boxWidget");
+.BI "_bool " "boxWidget");
 .TP 15
 .B "void setCDKMatrixBoxAttribute ("
 .BI "CDKMATRIX *" "matrix",
@@ -327,7 +327,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

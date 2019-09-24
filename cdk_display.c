@@ -50,9 +50,9 @@ EDisplayType char2DisplayType (const char *string)
 /*
  * Tell if a display type is "hidden"
  */
-boolean isHiddenDisplayType (EDisplayType type)
+_bool isHiddenDisplayType (EDisplayType type)
 {
-   boolean result = FALSE;
+   _bool result = FALSE;
 
    switch (type)
    {

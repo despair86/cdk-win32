@@ -40,8 +40,8 @@ int main (int argc, char **argv)
    int j1, j2;
 
    CDK_PARAMS params;
-   boolean boxWidget;
-   boolean shadowWidget;
+   _bool boxWidget;
+   _bool shadowWidget;
    char *buttons;
    char *outputFile;
    char *initValue;

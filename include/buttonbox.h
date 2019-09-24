@@ -78,7 +78,7 @@ struct SButtonBox {
    int		boxHeight;
    chtype	ButtonAttrib;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
    chtype	highlight;
 };
 typedef struct SButtonBox CDKBUTTONBOX;
@@ -98,8 +98,8 @@ CDKBUTTONBOX *newCDKButtonbox (
 		CDK_CSTRING2	/* buttons */,
 		int		/* buttonCount */,
 		chtype		/* highlight */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the widget.
@@ -119,7 +119,7 @@ int activateCDKButtonbox (
 void setCDKButtonbox (
 		CDKBUTTONBOX *	/* buttonbox */,
 		chtype		/* highlight */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 void setCDKButtonboxCurrentButton (
 		CDKBUTTONBOX *	/* buttonbox */,
@@ -146,9 +146,9 @@ chtype getCDKButtonboxHighlight (
  */
 void setCDKButtonboxBox (
 		CDKBUTTONBOX *	/* buttonbox */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKButtonboxBox (
+_bool getCDKButtonboxBox (
 		CDKBUTTONBOX *	/* buttonbox */);
 
 /*

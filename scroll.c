@@ -10,8 +10,8 @@
 /*
  * Declare file local prototypes.
  */
-static void drawCDKScrollList (CDKSCROLL *scrollp, boolean Box);
-static int createCDKScrollItemList (CDKSCROLL *scrollp, boolean numbers,
+static void drawCDKScrollList (CDKSCROLL *scrollp, _bool Box);
+static int createCDKScrollItemList (CDKSCROLL *scrollp, _bool numbers,
 				    CDK_CSTRING2 list, int listSize);
 static void fixCursorPosition (CDKSCROLL *widget);
 static void setViewSize (CDKSCROLL *scrollp, int listSize);
@@ -45,10 +45,10 @@ CDKSCROLL *newCDKScroll (CDKSCREEN *cdkscreen,
 			 const char *title,
 			 CDK_CSTRING2 list,
 			 int listSize,
-			 boolean numbers,
+			 _bool numbers,
 			 chtype highlight,
-			 boolean Box,
-			 boolean shadow)
+			 _bool Box,
+			 _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKSCROLL *scrollp           = 0;
@@ -238,7 +238,7 @@ int activateCDKScroll (CDKSCROLL *scrollp, chtype *actions)
    if (actions == 0)
    {
       chtype input;
-      boolean functionKey;
+      _bool functionKey;
 
       for (;;)
       {
@@ -459,8 +459,8 @@ void setCDKScrollCurrentTop (CDKSCROLL *widget, int item)
 static void _moveCDKScroll (CDKOBJS *object,
 			    int xplace,
 			    int yplace,
-			    boolean relative,
-			    boolean refresh_flag)
+			    _bool relative,
+			    _bool refresh_flag)
 {
    /* *INDENT-EQLS* */
    CDKSCROLL *scrollp = (CDKSCROLL *)object;
@@ -507,7 +507,7 @@ static void _moveCDKScroll (CDKOBJS *object,
 /*
  * This function draws the scrolling list widget.
  */
-static void _drawCDKScroll (CDKOBJS *object, boolean Box)
+static void _drawCDKScroll (CDKOBJS *object, _bool Box)
 {
    CDKSCROLL *scrollp = (CDKSCROLL *)object;
 
@@ -559,7 +559,7 @@ static void setViewSize (CDKSCROLL *scrollp, int listSize)
 /*
  * This redraws the scrolling list.
  */
-static void drawCDKScrollList (CDKSCROLL *scrollp, boolean Box)
+static void drawCDKScrollList (CDKSCROLL *scrollp, _bool Box)
 {
    /* If the list is empty, don't draw anything. */
    if (scrollp->listSize > 0)
@@ -690,12 +690,12 @@ static void _eraseCDKScroll (CDKOBJS *object)
    }
 }
 
-static boolean allocListArrays (CDKSCROLL *scrollp,
+static _bool allocListArrays (CDKSCROLL *scrollp,
 				int newSize,
 				bool first)
 {
    /* *INDENT-EQLS* */
-   boolean result;
+   _bool result;
    chtype **newList     = 0;
    int *newLen          = 0;
    int *newPos          = 0;
@@ -762,7 +762,7 @@ static boolean allocListArrays (CDKSCROLL *scrollp,
    return result;
 }
 
-static boolean allocListItem (CDKSCROLL *scrollp,
+static _bool allocListItem (CDKSCROLL *scrollp,
 			      int which,
 			      char **work,
 			      size_t * used,
@@ -807,7 +807,7 @@ static boolean allocListItem (CDKSCROLL *scrollp,
  * variables for the scrolling list to work correctly.
  */
 static int createCDKScrollItemList (CDKSCROLL *scrollp,
-				    boolean numbers,
+				    _bool numbers,
 				    CDK_CSTRING2 list,
 				    int listSize)
 {
@@ -847,7 +847,7 @@ static int createCDKScrollItemList (CDKSCROLL *scrollp,
 	 {
 	    updateViewWidth (scrollp, widestItem);
 
-	    /* Keep the boolean flag 'numbers' */
+	    /* Keep the _bool flag 'numbers' */
 	    scrollp->numbers = numbers;
 	 }
       }
@@ -866,9 +866,9 @@ static int createCDKScrollItemList (CDKSCROLL *scrollp,
 void setCDKScroll (CDKSCROLL *scrollp,
 		   CDK_CSTRING2 list,
 		   int listSize,
-		   boolean numbers,
+		   _bool numbers,
 		   chtype highlight,
-		   boolean Box)
+		   _bool Box)
 {
    setCDKScrollItems (scrollp, list, listSize, numbers);
    setCDKScrollHighlight (scrollp, highlight);
@@ -878,7 +878,7 @@ void setCDKScroll (CDKSCROLL *scrollp,
 /*
  * This sets the scrolling list items.
  */
-void setCDKScrollItems (CDKSCROLL *scrollp, CDK_CSTRING2 list, int listSize, boolean numbers)
+void setCDKScrollItems (CDKSCROLL *scrollp, CDK_CSTRING2 list, int listSize, _bool numbers)
 {
    int x = 0;
 
@@ -925,12 +925,12 @@ chtype getCDKScrollHighlight (CDKSCROLL *scrollp, chtype highlight GCC_UNUSED)
 /*
  * This sets the box attribute of the scrolling list.
  */
-void setCDKScrollBox (CDKSCROLL *scrollp, boolean Box)
+void setCDKScrollBox (CDKSCROLL *scrollp, _bool Box)
 {
    ObjOf (scrollp)->box = Box;
    ObjOf (scrollp)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKScrollBox (CDKSCROLL *scrollp)
+_bool getCDKScrollBox (CDKSCROLL *scrollp)
 {
    return ObjOf (scrollp)->box;
 }
@@ -967,7 +967,7 @@ static void resequence (CDKSCROLL *scrollp)
    }
 }
 
-static boolean insertListItem (CDKSCROLL *scrollp, int item)
+static _bool insertListItem (CDKSCROLL *scrollp, int item)
 {
    int x;
    for (x = scrollp->listSize; x > item; --x)

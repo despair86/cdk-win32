@@ -38,9 +38,9 @@ int main (int argc, char **argv)
    int j1, j2;
 
    CDK_PARAMS params;
-   boolean boxWidget;
-   boolean mixPlate;
-   boolean shadowWidget;
+   _bool boxWidget;
+   _bool mixPlate;
+   _bool shadowWidget;
    char *buttons;
    char *defaultAnswer;
    char *label;

@@ -58,12 +58,12 @@ cdk_viewer \- curses viewer list widget.
 .TP 15
 .B "void drawCDKViewer ("
 .BI "CDKVIEWER *" "viewer",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKViewer ("
 .BI "CDKVIEWER *" "viewer");
 .TP 15
-.B "boolean getCDKViewerBox ("
+.B "_bool getCDKViewerBox ("
 .BI "CDKVIEWER *" "viewer");
 .TP 15
 .B "chtype getCDKViewerHighlight ("
@@ -73,7 +73,7 @@ cdk_viewer \- curses viewer list widget.
 .BI "CDKVIEWER *" "viewer",
 .BI "char **" "itemList");
 .TP 15
-.B "boolean getCDKViewerInfoLine ("
+.B "_bool getCDKViewerInfoLine ("
 .BI "CDKVIEWER *" "viewer");
 .TP 15
 .B "chtype **getCDKViewerTitle ("
@@ -83,8 +83,8 @@ cdk_viewer \- curses viewer list widget.
 .BI "CDKVIEWEE *" "viewer",
 .BI "int " "box",
 .BI "int " "box",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKVIEWER *newCDKViewer ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -95,8 +95,8 @@ cdk_viewer \- curses viewer list widget.
 .BI "CDK_CONST char **" "buttonList",
 .BI "int " "buttonCount",
 .BI "chtype " "buttonHighlight",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKViewer ("
 .BI "CDKVIEWER *" "viewer");
@@ -107,9 +107,9 @@ cdk_viewer \- curses viewer list widget.
 .BI "CDK_CONST char **" "list",
 .BI "int " "listSize",
 .BI "chtype " "buttonAttribute",
-.BI "boolean " "interpret",
-.BI "boolean " "showLineInfo",
-.BI "boolean " "box");
+.BI "_bool " "interpret",
+.BI "_bool " "showLineInfo",
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKViewerBackgroundAttrib ("
 .BI "CDKVIEWER *" "viewer",
@@ -121,7 +121,7 @@ cdk_viewer \- curses viewer list widget.
 .TP 15
 .B "void setCDKViewerBox ("
 .BI "CDKVIEWER *" "viewer",
-.BI "boolean " "Box");
+.BI "_bool " "Box");
 .TP 15
 .B "void setCDKViewerBoxAttribute ("
 .BI "CDKVIEWER *" "viewer",
@@ -139,11 +139,11 @@ cdk_viewer \- curses viewer list widget.
 .BI "CDKVIEWER *" "viewer",
 .BI "CDK_CONST char **" "list",
 .BI "int " "listSize",
-.BI "boolean " "interpret");
+.BI "_bool " "interpret");
 .TP 15
 .B "void setCDKViewerInfoLine ("
 .BI "CDKVIEWER *" "viewer",
-.BI "boolean " "showInfoLine");
+.BI "_bool " "showInfoLine");
 .TP 15
 .B "void setCDKViewerLLChar ("
 .BI "CDKVIEWER *" "viewer",
@@ -256,7 +256,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5
@@ -323,10 +323,10 @@ length, including files which will be included via embedded links.
 \fBbuttonAttribute\fR states the attribute of the current
 highlighted button.
 .bP
-The boolean parameter \fBinterpret\fR tells the viewer to
+The _bool parameter \fBinterpret\fR tells the viewer to
 interpret the contents of \fBlist\fR for Cdk display command.
 .bP
-The \fBshowLineInfo\fR boolean flag tells the viewer to show to show the
+The \fBshowLineInfo\fR _bool flag tells the viewer to show to show the
 line number and percentage in the top left corner of the viewer window.
 .bP
 The parameters \fBbox\fR and \fBshadow\fR are the same as in the function

@@ -13,7 +13,7 @@ void popupLabel (CDKSCREEN *screen, CDK_CSTRING2 mesg, int count)
 {
    CDKLABEL *popup = 0;
    int oldCursState;
-   boolean functionKey;
+   _bool functionKey;
 
    /* Create the label. */
    popup = newCDKLabel (screen, CENTER, CENTER, mesg, count, TRUE, FALSE);
@@ -42,7 +42,7 @@ void popupLabelAttrib (CDKSCREEN *screen, CDK_CSTRING2 mesg, int count, chtype a
 {
    CDKLABEL *popup = 0;
    int oldCursState;
-   boolean functionKey;
+   _bool functionKey;
 
    /* Create the label. */
    popup = newCDKLabel (screen, CENTER, CENTER, mesg, count, TRUE, FALSE);

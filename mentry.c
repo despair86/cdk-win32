@@ -28,8 +28,8 @@ CDKMENTRY *newCDKMentry (CDKSCREEN *cdkscreen,
 			 int fRows,
 			 int logicalRows,
 			 int min,
-			 boolean Box,
-			 boolean shadow)
+			 _bool Box,
+			 _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKMENTRY *mentry    = 0;
@@ -174,7 +174,7 @@ CDKMENTRY *newCDKMentry (CDKSCREEN *cdkscreen,
 char *activateCDKMentry (CDKMENTRY *mentry, chtype *actions)
 {
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    char *ret = 0;
 
    /* Draw the mentry widget. */
@@ -584,8 +584,8 @@ static int _injectCDKMentry (CDKOBJS *object, chtype input)
 static void _moveCDKMentry (CDKOBJS *object,
 			    int xplace,
 			    int yplace,
-			    boolean relative,
-			    boolean refresh_flag)
+			    _bool relative,
+			    _bool refresh_flag)
 {
    CDKMENTRY *mentry = (CDKMENTRY *)object;
    /* *INDENT-EQLS* */
@@ -746,7 +746,7 @@ static void CDKMentryCallBack (CDKMENTRY *mentry, chtype character)
 /*
  * This function draws the multiple line entry field.
  */
-static void _drawCDKMentry (CDKOBJS *object, boolean Box)
+static void _drawCDKMentry (CDKOBJS *object, _bool Box)
 {
    CDKMENTRY *mentry = (CDKMENTRY *)object;
 
@@ -841,7 +841,7 @@ static void _destroyCDKMentry (CDKOBJS *object)
 /*
  * This sets multiple attributes of the widget.
  */
-void setCDKMentry (CDKMENTRY *mentry, const char *value, int min, boolean Box)
+void setCDKMentry (CDKMENTRY *mentry, const char *value, int min, _bool Box)
 {
    setCDKMentryValue (mentry, value);
    setCDKMentryMin (mentry, min);
@@ -938,12 +938,12 @@ int getCDKMentryMin (CDKMENTRY *mentry)
 /*
  * This sets the widgets box attribute.
  */
-void setCDKMentryBox (CDKMENTRY *mentry, boolean Box)
+void setCDKMentryBox (CDKMENTRY *mentry, _bool Box)
 {
    ObjOf (mentry)->box = Box;
    ObjOf (mentry)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKMentryBox (CDKMENTRY *mentry)
+_bool getCDKMentryBox (CDKMENTRY *mentry)
 {
    return ObjOf (mentry)->box;
 }

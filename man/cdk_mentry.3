@@ -64,7 +64,7 @@ cdk_mentry \- curses multiple line entry widget.
 .TP 15
 .B "void drawCDKMentry ("
 .BI "CDKMENTRY *" "mentry",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void drawCDKMentryField ("
 .BI "CDKMENTRY *" "mentry");
@@ -72,7 +72,7 @@ cdk_mentry \- curses multiple line entry widget.
 .B "void eraseCDKMentry ("
 .BI "CDKMENTRY *" "mentry");
 .TP 15
-.B "boolean getCDKMentryBox ("
+.B "_bool getCDKMentryBox ("
 .BI "CDKMENTRY *" "mentry");
 .TP 15
 .B "chtype getCDKMentryFillerChar ("
@@ -95,8 +95,8 @@ cdk_mentry \- curses multiple line entry widget.
 .BI "CDKMENTRY *" "mentry",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKMENTRY *newCDKMentry ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -111,8 +111,8 @@ cdk_mentry \- curses multiple line entry widget.
 .BI "int " "fieldRows",
 .BI "int " "logicalRows",
 .BI "int " "minimumLength",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKMentry ("
 .BI "CDKMENTRY *" "mentry");
@@ -121,7 +121,7 @@ cdk_mentry \- curses multiple line entry widget.
 .BI "CDKMENTRY *" "mentry",
 .BI "const char *" "value",
 .BI "int " "minimumLength",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKMentryBackgroundAttrib ("
 .BI "CDKMENTRY *" "mentry",
@@ -133,7 +133,7 @@ cdk_mentry \- curses multiple line entry widget.
 .TP 15
 .B "void setCDKMentryBox ("
 .BI "CDKMENTRY *" "mentry",
-.BI "boolean " "boxWidget");
+.BI "_bool " "boxWidget");
 .TP 15
 .B "void setCDKMentryBoxAttribute ("
 .BI "CDKMENTRY *" "mentry",
@@ -312,7 +312,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

@@ -88,8 +88,8 @@ CDKRADIO *newCDKRadio (
 		chtype		/* choiceChar */,
 		int		/* defItem */,
 		chtype		/* highlight */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the widget.
@@ -110,7 +110,7 @@ void setCDKRadio (
 		CDKRADIO *	/* radio */,
 		chtype		/* highlight */,
 		chtype		/* character */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the contents of the radio list.
@@ -167,9 +167,9 @@ chtype getCDKRadioRightBrace (
  */
 void setCDKRadioBox (
 		CDKRADIO *	/* radio */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKRadioBox (
+_bool getCDKRadioBox (
 		CDKRADIO *	/* radio */);
 
 /*

@@ -73,7 +73,7 @@ cdk_swindow \- a curses scrolling window widget.
 .TP 15
 .B "void drawCDKSwindow ("
 .BI "CDKSWINDOW *" "swindow",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void dumpCDKSwindow ("
 .BI "CDKSWINDOW *" "swindow",
@@ -85,7 +85,7 @@ cdk_swindow \- a curses scrolling window widget.
 .BI "CDKSWINDOW *" "swindow,"
 .BI "char *" "command,"
 .BI "int " "insertPosition);"
-.B "boolean getCDKSwindowBox ("
+.B "_bool getCDKSwindowBox ("
 .BI "CDKSWINDOW *" "swindow);"
 .TP 15
 .B "chtype **getCDKSwindowContents ("
@@ -106,8 +106,8 @@ cdk_swindow \- a curses scrolling window widget.
 .BI "CDKSWINDOW *" "swindow",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKSWINDOW *newCDKSwindow ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -117,8 +117,8 @@ cdk_swindow \- a curses scrolling window widget.
 .BI "int " "width",
 .BI "const char *" "title",
 .BI "int " "saveLines",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKSwindow ("
 .BI "CDKSWINDOW *" "swindow");
@@ -130,7 +130,7 @@ cdk_swindow \- a curses scrolling window widget.
 .BI "CDKSWINDOW *" "swindow",
 .BI "CDK_CONST char **" "info",
 .BI "int " "lines",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKSwindowBackgroundAttrib ("
 .BI "CDKSWINDOW *" "swindow",
@@ -142,7 +142,7 @@ cdk_swindow \- a curses scrolling window widget.
 .TP 15
 .B "void setCDKSwindowBox ("
 .BI "CDKSWINDOW *" "swindow,"
-.BI "boolean " "boxWidget);"
+.BI "_bool " "boxWidget);"
 .TP 15
 .B "void setCDKSwindowBoxAttribute ("
 .BI "CDKSWINDOW *" "swindow",
@@ -341,7 +341,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

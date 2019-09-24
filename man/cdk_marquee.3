@@ -42,7 +42,7 @@ cdk_marquee \- curses marquee widget
 .BI "const char *" "message",
 .BI "int " "delay",
 .BI "int " "repeat",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void deactivateCDKMarquee ("
 .BI "CDKMARQUEE *" "marquee");
@@ -52,28 +52,28 @@ cdk_marquee \- curses marquee widget
 .TP 15
 .B "void drawCDKMarquee ("
 .BI "CDKMARQUEE *" "marquee",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKMarquee ("
 .BI "CDKMARQUEE *" "marquee");
 .TP 15
-.B "boolean getCDKMarqueeBox ("
+.B "_bool getCDKMarqueeBox ("
 .BI "CDKMENTRY *" "mentry");
 .TP 15
 .B "void moveCDKMarquee ("
 .BI "CDKMARQUEE *" "marquee",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKMARQUEE *newCDKMarquee ("
 .BI "CDKSCREEN *" "cdkscreen",
 .BI "int " "xpos",
 .BI "int " "ypos",
 .BI "int " "fieldWidth",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKMarquee ("
 .BI "CDKMARQUEE *" "marquee");
@@ -88,7 +88,7 @@ cdk_marquee \- curses marquee widget
 .TP 15
 .B "void setCDKMarqueeBox ("
 .BI "CDKMENTRY *" "mentry",
-.BI "boolean " "boxWidget");
+.BI "_bool " "boxWidget");
 .TP 15
 .B "void setCDKMarqueeBoxAttribute ("
 .BI "CDKMARQUEE *" "marquee",
@@ -187,7 +187,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will get refreshed after the move.
 .RE
 .TP 5

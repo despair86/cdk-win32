@@ -67,8 +67,8 @@ CDKMARQUEE *newCDKMarquee (CDKSCREEN *cdkscreen,
 			   int xpos,
 			   int ypos,
 			   int width,
-			   boolean Box,
-			   boolean shadow)
+			   _bool Box,
+			   _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKMARQUEE *widget   = 0;
@@ -105,7 +105,7 @@ int activateCDKMarquee (CDKMARQUEE *widget,
 			const char *mesg,
 			int delay,
 			int repeat,
-			boolean Box)
+			_bool Box)
 {
    /* *INDENT-EQLS* */
    int mesgLength       = 0;
@@ -249,8 +249,8 @@ void deactivateCDKMarquee (CDKMARQUEE *widget)
 static void _moveCDKMarquee (CDKOBJS *object,
 			     int xplace,
 			     int yplace,
-			     boolean relative,
-			     boolean refresh_flag)
+			     _bool relative,
+			     _bool refresh_flag)
 {
    CDKMARQUEE *widget = (CDKMARQUEE *)object;
    /* *INDENT-EQLS* */
@@ -295,7 +295,7 @@ static void _moveCDKMarquee (CDKOBJS *object,
 /*
  * This draws the marquee widget on the screen.
  */
-static void _drawCDKMarquee (CDKOBJS *object, boolean Box)
+static void _drawCDKMarquee (CDKOBJS *object, _bool Box)
 {
    CDKMARQUEE *widget = (CDKMARQUEE *)object;
 
@@ -360,7 +360,7 @@ static void _eraseCDKMarquee (CDKOBJS *object)
 /*
  * This sets the widgets box attribute.
  */
-void setCDKMarqueeBox (CDKMARQUEE *widget, boolean Box)
+void setCDKMarqueeBox (CDKMARQUEE *widget, _bool Box)
 {
    int xpos = widget->win ? getbegx (widget->win) : 0;
    int ypos = widget->win ? getbegy (widget->win) : 0;
@@ -370,7 +370,7 @@ void setCDKMarqueeBox (CDKMARQUEE *widget, boolean Box)
 
    layoutWidget (widget, xpos, ypos);
 }
-boolean getCDKMarqueeBox (CDKMARQUEE *widget)
+_bool getCDKMarqueeBox (CDKMARQUEE *widget)
 {
    return ObjOf (widget)->box;
 }

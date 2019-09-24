@@ -53,7 +53,7 @@ static CDKOBJS *switchFocus (CDKOBJS *newobj, CDKOBJS *oldobj)
    return newobj;
 }
 
-static boolean checkMenuKey (int keyCode, int functionKey)
+static _bool checkMenuKey (int keyCode, int functionKey)
 {
    int result;
 
@@ -70,7 +70,7 @@ static CDKOBJS *handleMenu (CDKSCREEN *screen, CDKOBJS *menu, CDKOBJS *oldobj)
    switchFocus (menu, oldobj);
    while (!done)
    {
-      boolean functionKey;
+      _bool functionKey;
       int key = getchCDKObject (menu, &functionKey);
 
       switch (key)
@@ -284,7 +284,7 @@ CDKOBJS *setCDKFocusLast (CDKSCREEN *screen)
 void traverseCDKOnce (CDKSCREEN *screen,
 		      CDKOBJS *curobj,
 		      int keyCode,
-		      boolean functionKey,
+		      _bool functionKey,
 		      CHECK_KEYCODE funcMenuKey)
 {
    switch (keyCode)
@@ -358,7 +358,7 @@ int traverseCDKScreen (CDKSCREEN *screen)
 	     && (screen->exitStatus == CDKSCREEN_NOEXIT))
       {
 	 int key;
-	 boolean function;
+	 _bool function;
 
 	 key = getchCDKObject (curobj, &function);
 

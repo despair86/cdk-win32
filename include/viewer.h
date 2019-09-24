@@ -83,11 +83,11 @@ struct SViewer {
    int		maxTopLine;
    int		widestLine;
    long		characters;
-   boolean	inProgress;
-   boolean	showLineInfo;
-   boolean	interpret;
+   _bool	inProgress;
+   _bool	showLineInfo;
+   _bool	interpret;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
 };
 typedef struct SViewer CDKVIEWER;
 
@@ -103,8 +103,8 @@ CDKVIEWER *newCDKViewer (
 		CDK_CSTRING2	/* buttons */,
 		int		/* buttonCount */,
 		chtype		/* buttonHighlight */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the viewer widget.
@@ -122,9 +122,9 @@ int setCDKViewer (
 		CDK_CSTRING2	/* info */,
 		int		/* infoSize */,
 		chtype		/* buttonHighlight */,
-		boolean		/* interpret */,
-		boolean		/* showLineInfo */,
-		boolean		/* Box */);
+		_bool		/* interpret */,
+		_bool		/* showLineInfo */,
+		_bool		/* Box */);
 
 /*
  * This sets the contents of the viewer widget.
@@ -133,7 +133,7 @@ int setCDKViewerInfo (
 		CDKVIEWER *	/* viewer */,
 		CDK_CSTRING2	/* info */,
 		int		/* infoSize */,
-		boolean		/* interpret */);
+		_bool		/* interpret */);
 
 chtype **getCDKViewerInfo (
 		CDKVIEWER *	/* viewer */,
@@ -160,14 +160,14 @@ chtype getCDKViewerHighlight (
 		CDKVIEWER *	/* viewer */);
 
 /*
- * This sets the boolean flag dictating whether a information line
+ * This sets the _bool flag dictating whether a information line
  * will be displayed in the top left corner of the viewer.
  */
 void setCDKViewerInfoLine (
 		CDKVIEWER *	/* viewer */,
-		boolean		/* showLineInfo */);
+		_bool		/* showLineInfo */);
 
-boolean getCDKViewerInfoLine (
+_bool getCDKViewerInfoLine (
 		CDKVIEWER *	/* viewer */);
 
 /*
@@ -175,9 +175,9 @@ boolean getCDKViewerInfoLine (
  */
 void setCDKViewerBox (
 		CDKVIEWER *	/* viewer */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKViewerBox (
+_bool getCDKViewerBox (
 		CDKVIEWER *	/* viewer */);
 
 /*

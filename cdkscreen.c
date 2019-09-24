@@ -28,7 +28,7 @@ ALL_OBJECTS;
 
 static ALL_OBJECTS *all_objects;
 
-static boolean validObjType (CDKOBJS *obj, EObjectType type)
+static _bool validObjType (CDKOBJS *obj, EObjectType type)
 {
    bool valid = FALSE;
 

@@ -222,7 +222,7 @@ int getcCDKObject (CDKOBJS *obj)
  * Use this function rather than getcCDKObject(), since we can extend it to
  * handle wide-characters.
  */
-int getchCDKObject (CDKOBJS *obj, boolean *functionKey)
+int getchCDKObject (CDKOBJS *obj, _bool *functionKey)
 {
    int key = getcCDKObject (obj);
    if (functionKey != NULL)

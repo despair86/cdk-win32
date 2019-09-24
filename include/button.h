@@ -78,7 +78,7 @@ struct SButton {
    int		ypos;
    int		rows;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
    chtype	highlight;
    void *	callbackData;
 };
@@ -114,8 +114,8 @@ CDKBUTTON *newCDKButton (
 		int		/* yPos */,
 		const char *	/* button text */,
 		tButtonCallback /* callback function */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This was added to make the builder simpler. All this will
@@ -136,7 +136,7 @@ int activateCDKButton (
 void setCDKButton (
 		CDKBUTTON *	/* button */,
 		const char *	/* text */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the contents of the button.
@@ -153,9 +153,9 @@ chtype *getCDKButtonMessage (
  */
 void setCDKButtonBox (
 		CDKBUTTON *	/* button */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKButtonBox (
+_bool getCDKButtonBox (
 		CDKBUTTON *	/* button */);
 
 /*

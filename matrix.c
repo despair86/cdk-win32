@@ -14,7 +14,7 @@ static void CDKMatrixCallBack (CDKMATRIX *matrix, chtype input);
 static void drawCDKMatrixCell (CDKMATRIX *matrix,
 			       int srow, int scol,
 			       int vrow, int vcol,
-			       boolean Box);
+			       _bool Box);
 static void drawCurCDKMatrixCell (CDKMATRIX *matrix);
 static void drawEachCDKMatrixCell (CDKMATRIX *matrix);
 static void drawEachColTitle (CDKMATRIX *matrix);
@@ -77,9 +77,9 @@ CDKMATRIX *newCDKMatrix (CDKSCREEN *cdkscreen,
 			 int cspace,
 			 chtype filler,
 			 int dominant,
-			 boolean Box,
-			 boolean boxCell,
-			 boolean shadow)
+			 _bool Box,
+			 _bool boxCell,
+			 _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKMATRIX *matrix    = 0;
@@ -391,7 +391,7 @@ int activateCDKMatrix (CDKMATRIX *matrix, chtype *actions)
    if (actions == 0)
    {
       chtype input = 0;
-      boolean functionKey;
+      _bool functionKey;
 
       for (;;)
       {
@@ -980,8 +980,8 @@ static void highlightCDKMatrixCell (CDKMATRIX *matrix)
 static void _moveCDKMatrix (CDKOBJS *object,
 			    int xplace,
 			    int yplace,
-			    boolean relative,
-			    boolean refresh_flag)
+			    _bool relative,
+			    _bool refresh_flag)
 {
    /* *INDENT-EQLS* */
    CDKMATRIX *matrix = (CDKMATRIX *)object;
@@ -1041,7 +1041,7 @@ static void drawCDKMatrixCell (CDKMATRIX *matrix,
 			       int col,
 			       int vrow,
 			       int vcol,
-			       boolean Box)
+			       _bool Box)
 {
    /* *INDENT-EQLS* */
    WINDOW *cell         = MATRIX_CELL (matrix, row, col);
@@ -1258,7 +1258,7 @@ static void drawOldCDKMatrixCell (CDKMATRIX *matrix)
 /*
  * This function draws the matrix widget.
  */
-static void _drawCDKMatrix (CDKOBJS *object, boolean Box)
+static void _drawCDKMatrix (CDKOBJS *object, _bool Box)
 {
    CDKMATRIX *matrix = (CDKMATRIX *)object;
 
@@ -1456,12 +1456,12 @@ void setCDKMatrixCells (CDKMATRIX *matrix,
 /*
  * This sets the widget's box attribute.
  */
-void setCDKMatrixBox (CDKMATRIX *matrix, boolean Box)
+void setCDKMatrixBox (CDKMATRIX *matrix, _bool Box)
 {
    ObjOf (matrix)->box = Box;
    ObjOf (matrix)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKMatrixBox (CDKMATRIX *matrix)
+_bool getCDKMatrixBox (CDKMATRIX *matrix)
 {
    return ObjOf (matrix)->box;
 }

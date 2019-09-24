@@ -82,7 +82,7 @@ struct SFileSelector {
    char *	linkAttribute;
    char *	sockAttribute;
    EExitType	exitType;
-   boolean	shadow;
+   _bool	shadow;
 };
 typedef struct SFileSelector CDKFSELECT;
 
@@ -104,8 +104,8 @@ CDKFSELECT *newCDKFselect (
 		const char *	/* fileAttributes */,
 		const char *	/* linkAttribute */,
 		const char *	/* sockAttribute */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the file selector.
@@ -132,7 +132,7 @@ void setCDKFselect (
 		const char *	/* fileAttribute */,
 		const char *	/* linkAttribute */,
 		const char *	/* sockAttribute */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the current directory of the file selector.
@@ -207,9 +207,9 @@ char *getCDKFselectSocketAttribute (
  */
 void setCDKFselectBox (
 		CDKFSELECT *	/* fselect */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKFselectBox (
+_bool getCDKFselectBox (
 		CDKFSELECT *	/* fselect */);
 
 /*

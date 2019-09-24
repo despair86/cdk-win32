@@ -82,7 +82,7 @@ struct SEntry {
    int		boxHeight;
    EExitType	exitType;
    EDisplayType dispType;
-   boolean	shadow;
+   _bool	shadow;
    chtype	filler;
    chtype	hidden;
    ENTRYCB	callbackfn;
@@ -111,8 +111,8 @@ CDKENTRY *newCDKEntry (
 		int		/* fieldWidth */,
 		int		/* min */,
 		int		/* max */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the entry widget.
@@ -134,7 +134,7 @@ void setCDKEntry (
 		const char *	/* value */,
 		int		/* min */,
 		int		/* max */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the value of the entry field.
@@ -188,8 +188,8 @@ chtype getCDKEntryHiddenChar (
  */
 void setCDKEntryBox (
 		CDKENTRY *	/* entry */,
-		boolean		/* Box */);
-boolean getCDKEntryBox (
+		_bool		/* Box */);
+_bool getCDKEntryBox (
 		CDKENTRY *	/* entry */);
 
 /*
@@ -219,7 +219,7 @@ boolean getCDKEntryBox (
 void setCDKEntryHighlight (
 		CDKENTRY *	/* entry */,
 		chtype		/* highlight */,
-		boolean		/* cursor */);
+		_bool		/* cursor */);
 
 /*
  * This draws the entry field.

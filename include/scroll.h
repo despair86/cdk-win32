@@ -69,7 +69,7 @@ struct SScroll {
    /* This field must stay on top */
    SCROLLER_FIELDS;
 
-   boolean	numbers;	/* */
+   _bool	numbers;	/* */
    chtype	titlehighlight;	/* */
    WINDOW	*listWin;
 };
@@ -88,10 +88,10 @@ CDKSCROLL *newCDKScroll (
 		const char *	/* title */,
 		CDK_CSTRING2	/* itemList */,
 		int		/* items */,
-		boolean		/* numbers */,
+		_bool		/* numbers */,
 		chtype		/* highlight */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This activates the scrolling list.
@@ -112,9 +112,9 @@ void setCDKScroll (
 		CDKSCROLL *	/* scroll */,
 		CDK_CSTRING2	/* itemList */,
 		int		/* items */,
-		boolean		/* numbers */,
+		_bool		/* numbers */,
 		chtype		/* highlight */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 void setCDKScrollPosition (
 		CDKSCROLL *	/* scroll */,
@@ -148,7 +148,7 @@ void setCDKScrollItems (
 		CDKSCROLL *	/* scroll */,
 		CDK_CSTRING2	/* itemList */,
 		int		/* items */,
-		boolean		/* numbers */);
+		_bool		/* numbers */);
 
 int getCDKScrollItems (
 		CDKSCROLL *	/* scroll */,
@@ -170,9 +170,9 @@ chtype getCDKScrollHighlight (
  */
 void setCDKScrollBox (
 		CDKSCROLL *	/* scroll */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKScrollBox (
+_bool getCDKScrollBox (
 		CDKSCROLL *	/* scroll */);
 
 /*

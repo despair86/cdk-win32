@@ -69,13 +69,13 @@ extern "C" {
    int      viewSize; \
 \
    int      scrollbarPlacement; \
-   boolean  scrollbar; \
+   _bool  scrollbar; \
    int      toggleSize; /* size of scrollbar thumb/toggle */ \
    int      togglePos; /* position of scrollbar thumb/toggle */ \
    float    step; /* increment for scrollbar */ \
 \
    EExitType    exitType; \
-   boolean  shadow; \
+   _bool  shadow; \
    chtype   highlight
 
 struct SScroller {

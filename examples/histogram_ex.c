@@ -22,7 +22,7 @@ int main (int argc, char **argv)
    const char *trebleTitle      = "<C></5>Treble<!5>";
 
    CDK_PARAMS params;
-   boolean Box;
+   _bool Box;
 
    CDKparseParams (argc, argv, &params, CDK_CLI_PARAMS);
    Box = CDKparamValue (&params, 'N', TRUE);

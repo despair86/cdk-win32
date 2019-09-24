@@ -11,7 +11,7 @@
  * Declare file local prototypes.
  */
 static int createList (CDKSELECTION *selection, CDK_CSTRING2 list, int listSize);
-static void drawCDKSelectionList (CDKSELECTION *selection, boolean Box);
+static void drawCDKSelectionList (CDKSELECTION *selection, _bool Box);
 static void setViewSize (CDKSELECTION *scrollp, int listSize);
 static int maxViewSize (CDKSELECTION *scrollp);
 
@@ -43,8 +43,8 @@ CDKSELECTION *newCDKSelection (CDKSCREEN *cdkscreen,
 			       CDK_CSTRING2 choices,
 			       int choiceCount,
 			       chtype highlight,
-			       boolean Box,
-			       boolean shadow)
+			       _bool Box,
+			       _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKSELECTION *selection      = 0;
@@ -241,7 +241,7 @@ int activateCDKSelection (CDKSELECTION *selection, chtype *actions)
    if (actions == 0)
    {
       chtype input;
-      boolean functionKey;
+      _bool functionKey;
 
       for (;;)
       {
@@ -432,8 +432,8 @@ static int _injectCDKSelection (CDKOBJS *object, chtype input)
 static void _moveCDKSelection (CDKOBJS *object,
 			       int xplace,
 			       int yplace,
-			       boolean relative,
-			       boolean refresh_flag)
+			       _bool relative,
+			       _bool refresh_flag)
 {
    CDKSELECTION *selection = (CDKSELECTION *)object;
    /* *INDENT-EQLS* */
@@ -479,7 +479,7 @@ static void _moveCDKSelection (CDKOBJS *object,
 /*
  * This function draws the selection list.
  */
-static void _drawCDKSelection (CDKOBJS *object, boolean Box)
+static void _drawCDKSelection (CDKOBJS *object, _bool Box)
 {
    CDKSELECTION *selection = (CDKSELECTION *)object;
 
@@ -511,7 +511,7 @@ static void setViewSize (CDKSELECTION *widget, int listSize)
 /*
  * This function draws the selection list window.
  */
-static void drawCDKSelectionList (CDKSELECTION *selection, boolean Box GCC_UNUSED)
+static void drawCDKSelectionList (CDKSELECTION *selection, _bool Box GCC_UNUSED)
 {
    /* *INDENT-EQLS* */
    int scrollbarAdj     = (selection->scrollbarPlacement == LEFT) ? 1 : 0;
@@ -662,7 +662,7 @@ static void _eraseCDKSelection (CDKOBJS *object)
 void setCDKSelection (CDKSELECTION *selection,
 		      chtype highlight,
 		      int *choices,
-		      boolean Box)
+		      _bool Box)
 {
    setCDKSelectionChoices (selection, choices);
    setCDKSelectionHighlight (selection, highlight);
@@ -888,12 +888,12 @@ int getCDKSelectionMode (CDKSELECTION *selection, int Index)
 /*
  * This sets the box attribute of the widget.
  */
-void setCDKSelectionBox (CDKSELECTION *selection, boolean Box)
+void setCDKSelectionBox (CDKSELECTION *selection, _bool Box)
 {
    ObjOf (selection)->box = Box;
    ObjOf (selection)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKSelectionBox (CDKSELECTION *selection)
+_bool getCDKSelectionBox (CDKSELECTION *selection)
 {
    return ObjOf (selection)->box;
 }

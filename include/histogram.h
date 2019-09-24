@@ -86,7 +86,7 @@ struct SHistogram {
    int				highy;
    int				boxWidth;
    int				boxHeight;
-   boolean			shadow;
+   _bool			shadow;
 };
 typedef struct SHistogram CDKHISTOGRAM;
 
@@ -101,8 +101,8 @@ CDKHISTOGRAM *newCDKHistogram (
 		int		/* width */,
 		int		/* orient */,
 		const char *	/* title */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This was added to make the build simpler. All this will
@@ -124,7 +124,7 @@ void setCDKHistogram (
 		int		/* high */,
 		int		/* value */,
 		chtype		/* filler */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the low/high/current value of the histogram.
@@ -189,9 +189,9 @@ chtype getCDKHistogramStatsAttr (
  */
 void setCDKHistogramBox (
 		CDKHISTOGRAM *	/* histogram */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKHistogramBox (
+_bool getCDKHistogramBox (
 		CDKHISTOGRAM *	/* histogram */);
 
 /*

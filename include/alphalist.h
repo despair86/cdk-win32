@@ -77,7 +77,7 @@ struct SAlphalist {
    int		boxWidth;
    chtype	highlight;
    chtype	fillerChar;
-   boolean	shadow;
+   _bool	shadow;
    EExitType	exitType;
 };
 typedef struct SAlphalist CDKALPHALIST;
@@ -97,8 +97,8 @@ CDKALPHALIST *newCDKAlphalist (
 		int		/* listSize */,
 		chtype		/* fillerChar */,
 		chtype		/* highlight */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This allows the user to interact with the widget.
@@ -121,7 +121,7 @@ void setCDKAlphalist (
 		int		/* listSize */,
 		chtype		/* fillerChar */,
 		chtype		/* highlight */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the contents of the alpha list.
@@ -170,9 +170,9 @@ chtype getCDKAlphalistHighlight (
  */
 void setCDKAlphalistBox (
 		CDKALPHALIST *	/* alphalist */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKAlphalistBox (
+_bool getCDKAlphalistBox (
 		CDKALPHALIST *	/* alphalist */);
 
 /*

@@ -24,8 +24,8 @@ CDKITEMLIST *newCDKItemlist (CDKSCREEN *cdkscreen,
 			     CDK_CSTRING2 item,
 			     int count,
 			     int defaultItem,
-			     boolean Box,
-			     boolean shadow)
+			     _bool Box,
+			     _bool shadow)
 {
    /* Set up some variables.  */
    CDKITEMLIST *itemlist = 0;
@@ -167,7 +167,7 @@ int activateCDKItemlist (CDKITEMLIST *itemlist, chtype *actions)
    if (actions == 0)
    {
       chtype input = 0;
-      boolean functionKey;
+      _bool functionKey;
 
       for (;;)
       {
@@ -338,8 +338,8 @@ static int _injectCDKItemlist (CDKOBJS *object, chtype input)
 static void _moveCDKItemlist (CDKOBJS *object,
 			      int xplace,
 			      int yplace,
-			      boolean relative,
-			      boolean refresh_flag)
+			      _bool relative,
+			      _bool refresh_flag)
 {
    CDKITEMLIST *itemlist = (CDKITEMLIST *)object;
    /* *INDENT-EQLS* */
@@ -443,7 +443,7 @@ static void _setBKattrItemlist (CDKOBJS *object, chtype attrib)
 /*
  * This function draws the contents of the field.
  */
-void drawCDKItemlistField (CDKITEMLIST *itemlist, boolean highlight)
+void drawCDKItemlistField (CDKITEMLIST *itemlist, _bool highlight)
 {
    /* Declare local vars. */
    int currentItem = itemlist->currentItem;
@@ -536,7 +536,7 @@ void setCDKItemlist (CDKITEMLIST *itemlist,
 		     CDK_CSTRING2 list,
 		     int count,
 		     int current,
-		     boolean Box)
+		     _bool Box)
 {
    setCDKItemlistValues (itemlist, list, count, current);
    setCDKItemlistBox (itemlist, Box);
@@ -625,12 +625,12 @@ int getCDKItemlistDefaultItem (CDKITEMLIST *itemlist)
 /*
  * This sets the box attribute of the itemlist widget.
  */
-void setCDKItemlistBox (CDKITEMLIST *itemlist, boolean Box)
+void setCDKItemlistBox (CDKITEMLIST *itemlist, _bool Box)
 {
    ObjOf (itemlist)->box = Box;
    ObjOf (itemlist)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKItemlistBox (CDKITEMLIST *itemlist)
+_bool getCDKItemlistBox (CDKITEMLIST *itemlist)
 {
    return ObjOf (itemlist)->box;
 }

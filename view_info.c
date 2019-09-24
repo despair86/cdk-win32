@@ -15,7 +15,7 @@ int viewInfo (CDKSCREEN *screen,
 	      int count,
 	      CDK_CSTRING2 buttons,
 	      int buttonCount,
-	      boolean interpret)
+	      _bool interpret)
 {
    CDKVIEWER *viewer = 0;
    int selected;

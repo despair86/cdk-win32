@@ -1,6 +1,7 @@
 -- $Id: CHANGES,v 1.298 2019/03/04 01:33:44 tom Exp $
 -------------------------------------------------------------------------------
 Cdk Version Change List
+Copyright Rick V. 2019
 Copyright Thomas E. Dickey 1999-2018, 2019
 Copyright Mike Glover, 1995, 1996, 1997, 1998, 1999
 -------------------------------------------------------------------------------
@@ -8,6 +9,12 @@ Copyright Mike Glover, 1995, 1996, 1997, 1998, 1999
 This file outlines all of the changes/additions from one release to another.
 Changes through 4.9.8 (December 1998) were recorded by Mike Glover.
 Thereafter, changes have been recorded by Thomas E. Dickey.
+
+2019/09/24 (despair86)
+	+ converted pointer casts from long to long long for native Windows NT,
+	  where long is the same size as int (LLP64 vs LP64 platforms)
+	+ renamed Beep to _Beep because Windows API conflict
+	+ changed boolean to _bool (another Windows API conflict)
 
 2019/03/03
 	+ deprecate installCDKLibrary rule by install.libs, which is used in

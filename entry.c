@@ -28,8 +28,8 @@ CDKENTRY *newCDKEntry (CDKSCREEN *cdkscreen,
 		       int fWidth,
 		       int min,
 		       int max,
-		       boolean Box,
-		       boolean shadow)
+		       _bool Box,
+		       _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKENTRY *entry      = 0;
@@ -171,7 +171,7 @@ CDKENTRY *newCDKEntry (CDKSCREEN *cdkscreen,
 char *activateCDKEntry (CDKENTRY *entry, chtype *actions)
 {
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    char *ret = 0;
 
    /* Draw the widget. */
@@ -505,8 +505,8 @@ static int _injectCDKEntry (CDKOBJS *object, chtype input)
 static void _moveCDKEntry (CDKOBJS *object,
 			   int xplace,
 			   int yplace,
-			   boolean relative,
-			   boolean refresh_flag)
+			   _bool relative,
+			   _bool refresh_flag)
 {
    /* *INDENT-EQLS* */
    CDKENTRY *entry = (CDKENTRY *)object;
@@ -621,7 +621,7 @@ void cleanCDKEntry (CDKENTRY *entry)
 /*
  * This draws the entry field.
  */
-static void _drawCDKEntry (CDKOBJS *object, boolean Box)
+static void _drawCDKEntry (CDKOBJS *object, _bool Box)
 {
    CDKENTRY *entry = (CDKENTRY *)object;
 
@@ -742,7 +742,7 @@ void setCDKEntry (CDKENTRY *entry,
 		  const char *value,
 		  int min,
 		  int max,
-		  boolean Box GCC_UNUSED)
+		  _bool Box GCC_UNUSED)
 {
    setCDKEntryValue (entry, value);
    setCDKEntryMin (entry, min);
@@ -838,12 +838,12 @@ chtype getCDKEntryHiddenChar (CDKENTRY *entry)
 /*
  * This sets the widgets box attribute.
  */
-void setCDKEntryBox (CDKENTRY *entry, boolean Box)
+void setCDKEntryBox (CDKENTRY *entry, _bool Box)
 {
    ObjOf (entry)->box = Box;
    ObjOf (entry)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKEntryBox (CDKENTRY *entry)
+_bool getCDKEntryBox (CDKENTRY *entry)
 {
    return ObjOf (entry)->box;
 }
@@ -869,7 +869,7 @@ static void _setBKattrEntry (CDKOBJS *object, chtype attrib)
 /*
  * This sets the attribute of the entry field.
  */
-void setCDKEntryHighlight (CDKENTRY *entry, chtype highlight, boolean cursor)
+void setCDKEntryHighlight (CDKENTRY *entry, chtype highlight, _bool cursor)
 {
    wbkgd (entry->fieldWin, highlight);
    entry->fieldAttr = highlight;

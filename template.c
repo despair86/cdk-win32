@@ -27,8 +27,8 @@ CDKTEMPLATE *newCDKTemplate (CDKSCREEN *cdkscreen,
 			     const char *label,
 			     const char *plate,
 			     const char *Overlay,
-			     boolean Box,
-			     boolean shadow)
+			     _bool Box,
+			     _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKTEMPLATE *cdktemplate     = 0;
@@ -186,7 +186,7 @@ CDKTEMPLATE *newCDKTemplate (CDKSCREEN *cdkscreen,
 char *activateCDKTemplate (CDKTEMPLATE *cdktemplate, chtype *actions)
 {
    chtype input = 0;
-   boolean functionKey;
+   _bool functionKey;
    char *ret = 0;
 
    /* Draw the object. */
@@ -377,7 +377,7 @@ static int _injectCDKTemplate (CDKOBJS *object, chtype input)
 /*
  * Return true if the given string matches the template (may be incomplete).
  */
-static boolean validTemplate (CDKTEMPLATE *cdktemplate, char *input)
+static _bool validTemplate (CDKTEMPLATE *cdktemplate, char *input)
 {
    int pp, ip;
    const char *plate = cdktemplate->plate;
@@ -430,9 +430,9 @@ static boolean validTemplate (CDKTEMPLATE *cdktemplate, char *input)
  */
 static void CDKTemplateCallBack (CDKTEMPLATE *cdktemplate, chtype input)
 {
-   boolean failed = FALSE;
-   boolean change = FALSE;
-   boolean moveby = FALSE;
+   _bool failed = FALSE;
+   _bool change = FALSE;
+   _bool moveby = FALSE;
    int amount = 0;
    size_t mark = (size_t) cdktemplate->infoPos;
    size_t have = strlen (cdktemplate->info);
@@ -604,8 +604,8 @@ char *unmixCDKTemplate (CDKTEMPLATE *cdktemplate, const char *info)
 static void _moveCDKTemplate (CDKOBJS *object,
 			      int xplace,
 			      int yplace,
-			      boolean relative,
-			      boolean refresh_flag)
+			      _bool relative,
+			      _bool refresh_flag)
 {
    CDKTEMPLATE *cdktemplate = (CDKTEMPLATE *)object;
    /* *INDENT-EQLS* */
@@ -652,7 +652,7 @@ static void _moveCDKTemplate (CDKOBJS *object,
 /*
  * Draw the template widget.
  */
-static void _drawCDKTemplate (CDKOBJS *object, boolean Box)
+static void _drawCDKTemplate (CDKOBJS *object, _bool Box)
 {
    CDKTEMPLATE *cdktemplate = (CDKTEMPLATE *)object;
 
@@ -807,7 +807,7 @@ static void _eraseCDKTemplate (CDKOBJS *object)
 /*
  * Set the value given to the cdktemplate.
  */
-void setCDKTemplate (CDKTEMPLATE *cdktemplate, const char *newValue, boolean Box)
+void setCDKTemplate (CDKTEMPLATE *cdktemplate, const char *newValue, _bool Box)
 {
    setCDKTemplateValue (cdktemplate, newValue);
    setCDKTemplateBox (cdktemplate, Box);
@@ -868,12 +868,12 @@ int getCDKTemplateMin (CDKTEMPLATE *cdktemplate)
 /*
  * Set the box attribute of the cdktemplate widget.
  */
-void setCDKTemplateBox (CDKTEMPLATE *cdktemplate, boolean Box)
+void setCDKTemplateBox (CDKTEMPLATE *cdktemplate, _bool Box)
 {
    ObjOf (cdktemplate)->box = Box;
    ObjOf (cdktemplate)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKTemplateBox (CDKTEMPLATE *cdktemplate)
+_bool getCDKTemplateBox (CDKTEMPLATE *cdktemplate)
 {
    return ObjOf (cdktemplate)->box;
 }

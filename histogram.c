@@ -18,8 +18,8 @@ CDKHISTOGRAM *newCDKHistogram (CDKSCREEN *cdkscreen,
 			       int width,
 			       int orient,
 			       const char *title,
-			       boolean Box,
-			       boolean shadow)
+			       _bool Box,
+			       _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKHISTOGRAM *widget = 0;
@@ -125,7 +125,7 @@ void setCDKHistogram (CDKHISTOGRAM *widget,
 		      int high,
 		      int value,
 		      chtype filler,
-		      boolean Box)
+		      _bool Box)
 {
    setCDKHistogramDisplayType (widget, viewType);
    setCDKHistogramStatsPos (widget, statsPos);
@@ -486,12 +486,12 @@ chtype getCDKHistogramFillerChar (CDKHISTOGRAM *widget)
 /*
  * Set the widget box attribute.
  */
-void setCDKHistogramBox (CDKHISTOGRAM *widget, boolean Box)
+void setCDKHistogramBox (CDKHISTOGRAM *widget, _bool Box)
 {
    ObjOf (widget)->box = Box;
    ObjOf (widget)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKHistogramBox (CDKHISTOGRAM *widget)
+_bool getCDKHistogramBox (CDKHISTOGRAM *widget)
 {
    return ObjOf (widget)->box;
 }
@@ -514,8 +514,8 @@ static void _setBKattrHistogram (CDKOBJS *object, chtype attrib)
 static void _moveCDKHistogram (CDKOBJS *object,
 			       int xplace,
 			       int yplace,
-			       boolean relative,
-			       boolean refresh_flag)
+			       _bool relative,
+			       _bool refresh_flag)
 {
    CDKHISTOGRAM *widget = (CDKHISTOGRAM *)object;
    /* *INDENT-EQLS* */
@@ -560,7 +560,7 @@ static void _moveCDKHistogram (CDKOBJS *object,
 /*
  * Draw the widget.
  */
-static void _drawCDKHistogram (CDKOBJS *object, boolean Box)
+static void _drawCDKHistogram (CDKOBJS *object, _bool Box)
 {
    CDKHISTOGRAM *widget = (CDKHISTOGRAM *)object;
    /* *INDENT-EQLS* */

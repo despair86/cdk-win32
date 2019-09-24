@@ -66,7 +66,7 @@ struct SMarquee {
    int		width;
    int		boxWidth;
    int		boxHeight;
-   boolean	shadow;
+   _bool	shadow;
 };
 typedef struct SMarquee CDKMARQUEE;
 
@@ -78,8 +78,8 @@ CDKMARQUEE *newCDKMarquee (
 		int		/* xpos */,
 		int		/* ypos */,
 		int		/* width */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This turns the marquee 'on'.
@@ -89,7 +89,7 @@ int activateCDKMarquee (
 		const char *	/* message */,
 		int		/* delay */,
 		int		/* repeat */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This turns 'off' the marquee.
@@ -138,9 +138,9 @@ void deactivateCDKMarquee (
  */
 void setCDKMarqueeBox (
 		CDKMARQUEE *	/* marquee */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
-boolean getCDKMarqueeBox (
+_bool getCDKMarqueeBox (
 		CDKMARQUEE *	/* marquee */);
 
 /*

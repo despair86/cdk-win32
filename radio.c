@@ -11,7 +11,7 @@
  * Declare file local prototypes.
  */
 static int createList (CDKRADIO *radio, CDK_CSTRING2 list, int listSize, int width);
-static void drawCDKRadioList (CDKRADIO *radio, boolean Box);
+static void drawCDKRadioList (CDKRADIO *radio, _bool Box);
 static void setViewSize (CDKRADIO *scrollp, int listSize);
 static int maxViewSize (CDKRADIO *scrollp);
 
@@ -43,8 +43,8 @@ CDKRADIO *newCDKRadio (CDKSCREEN *cdkscreen,
 		       chtype choiceChar,
 		       int defItem,
 		       chtype highlight,
-		       boolean Box,
-		       boolean shadow)
+		       _bool Box,
+		       _bool shadow)
 {
    /* *INDENT-EQLS* */
    CDKRADIO *radio      = 0;
@@ -228,7 +228,7 @@ int activateCDKRadio (CDKRADIO *radio, chtype *actions)
    if (actions == 0)
    {
       chtype input;
-      boolean functionKey;
+      _bool functionKey;
 
       for (;;)
       {
@@ -405,8 +405,8 @@ static int _injectCDKRadio (CDKOBJS *object, chtype input)
 static void _moveCDKRadio (CDKOBJS *object,
 			   int xplace,
 			   int yplace,
-			   boolean relative,
-			   boolean refresh_flag)
+			   _bool relative,
+			   _bool refresh_flag)
 {
    CDKRADIO *radio = (CDKRADIO *)object;
    /* *INDENT-EQLS* */
@@ -465,7 +465,7 @@ static void setViewSize (CDKRADIO *widget, int listSize)
 /*
  * This function draws the radio widget.
  */
-static void _drawCDKRadio (CDKOBJS *object, boolean Box GCC_UNUSED)
+static void _drawCDKRadio (CDKOBJS *object, _bool Box GCC_UNUSED)
 {
    CDKRADIO *radio = (CDKRADIO *)object;
 
@@ -484,7 +484,7 @@ static void _drawCDKRadio (CDKOBJS *object, boolean Box GCC_UNUSED)
 /*
  * This redraws the radio list.
  */
-static void drawCDKRadioList (CDKRADIO *radio, boolean Box)
+static void drawCDKRadioList (CDKRADIO *radio, _bool Box)
 {
    int scrollbarAdj = (radio->scrollbarPlacement == LEFT) ? 1 : 0;
    int j, k;
@@ -743,12 +743,12 @@ chtype getCDKRadioRightBrace (CDKRADIO *radio)
 /*
  * This sets the box attribute of the widget.
  */
-void setCDKRadioBox (CDKRADIO *radio, boolean Box)
+void setCDKRadioBox (CDKRADIO *radio, _bool Box)
 {
    ObjOf (radio)->box = Box;
    ObjOf (radio)->borderSize = Box ? 1 : 0;
 }
-boolean getCDKRadioBox (CDKRADIO *radio)
+_bool getCDKRadioBox (CDKRADIO *radio)
 {
    return ObjOf (radio)->box;
 }

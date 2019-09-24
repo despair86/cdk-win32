@@ -98,14 +98,14 @@ int CDKparsePosition (
 		const char *	/* string */);
 
 /*
- * Retrieve an integer (or boolean) option value from the parsed command-line.
+ * Retrieve an integer (or _bool) option value from the parsed command-line.
  */
 int CDKparamNumber (
 		CDK_PARAMS *	/* params */,
 		int		/* option */);
 
 /*
- * Retrieve an optional integer (or boolean) value from the parsed command-line.
+ * Retrieve an optional integer (or _bool) value from the parsed command-line.
  */
 int CDKparamNumber2 (
 		CDK_PARAMS *	/* params */,
@@ -128,7 +128,7 @@ char * CDKparamString2 (
 		const char *	/* missing */);
 
 /*
- * Retrieve an integer (or boolean) option value from the parsed command-line.
+ * Retrieve an integer (or _bool) option value from the parsed command-line.
  */
 int CDKparamValue (
 		CDK_PARAMS *	/* params */,

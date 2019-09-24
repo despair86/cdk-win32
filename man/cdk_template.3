@@ -58,12 +58,12 @@ cdk_template \- a curses template widget.
 .TP 15
 .B "void drawCDKTemplate ("
 .BI "CDKTEMPLATE *" "template",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void eraseCDKTemplate ("
 .BI "CDKTEMPLATE *" "template");
 .TP 15
-.B "boolean getCDKTemplateBox ("
+.B "_bool getCDKTemplateBox ("
 .BI "CDKTEMPLATE *" "template");
 .TP 15
 .B "int getCDKTemplateMin ("
@@ -83,8 +83,8 @@ cdk_template \- a curses template widget.
 .BI "CDKTEMPLATE *" "template",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKTEMPLATE *newCDKTemplate ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -94,8 +94,8 @@ cdk_template \- a curses template widget.
 .BI "const char *" "label",
 .BI "const char *" "plate",
 .BI "const char *" "overlay",
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKTemplate ("
 .BI "CDKTEMPLATE *" "template");
@@ -103,7 +103,7 @@ cdk_template \- a curses template widget.
 .B "void setCDKTemplate ("
 .BI "CDKTEMPLATE *" "template",
 .BI "const char *" "value",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKTemplateBackgroundAttrib ("
 .BI "CDKTEMPLATE *" "template",
@@ -115,7 +115,7 @@ cdk_template \- a curses template widget.
 .TP 15
 .B "void setCDKTemplateBox ("
 .BI "CDKTEMPLATE *" "template",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKTemplateBoxAttribute ("
 .BI "CDKTEMPLATE *" "template",
@@ -286,7 +286,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which
+The final parameter \fBrefresh\fR is a _bool value which
 states whether the widget will be repainted after the move.
 .RE
 .TP 5

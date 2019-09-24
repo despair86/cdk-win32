@@ -75,7 +75,7 @@ struct SLabel {
    int		xpos;
    int		ypos;
    int		rows;
-   boolean	shadow;
+   _bool	shadow;
 };
 typedef struct SLabel CDKLABEL;
 
@@ -88,8 +88,8 @@ CDKLABEL *newCDKLabel (
 		int		/* yPos */,
 		CDK_CSTRING2	/* mesg */,
 		int		/* rows */,
-		boolean		/* Box */,
-		boolean		/* shadow */);
+		_bool		/* Box */,
+		_bool		/* shadow */);
 
 /*
  * This was added to make the builder simpler. All this will
@@ -106,7 +106,7 @@ void setCDKLabel (
 		CDKLABEL *	/* label */,
 		CDK_CSTRING2	/* message */,
 		int		/* lines */,
-		boolean		/* Box */);
+		_bool		/* Box */);
 
 /*
  * This sets the contents of the label.
@@ -124,8 +124,8 @@ chtype **getCDKLabelMessage (
  */
 void setCDKLabelBox (
 		CDKLABEL *	/* label */,
-		boolean		/* Box */);
-boolean getCDKLabelBox (
+		_bool		/* Box */);
+_bool getCDKLabelBox (
 		CDKLABEL *	/* label */);
 
 /*

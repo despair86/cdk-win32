@@ -91,9 +91,9 @@ typedef union {
 typedef struct CDKFUNCS {
    EObjectType  objectType;
    CDKDataType  returnType;
-   void         (*drawObj)         (struct CDKOBJS *, boolean);
+   void         (*drawObj)         (struct CDKOBJS *, _bool);
    void         (*eraseObj)        (struct CDKOBJS *);
-   void         (*moveObj)         (struct CDKOBJS *, int, int, boolean, boolean);
+   void         (*moveObj)         (struct CDKOBJS *, int, int, _bool, _bool);
    int          (*injectObj)       (struct CDKOBJS *, chtype);
    void         (*focusObj)        (struct CDKOBJS *);
    void         (*unfocusObj)      (struct CDKOBJS *);
@@ -145,11 +145,11 @@ typedef struct CDKOBJS {
    int          screenIndex;
    CDKSCREEN *  screen;
    const CDKFUNCS * fn;
-   boolean      box;
+   _bool      box;
    int          borderSize;
-   boolean      acceptsFocus;
-   boolean      hasFocus;
-   boolean      isVisible;
+   _bool      acceptsFocus;
+   _bool      hasFocus;
+   _bool      isVisible;
    WINDOW *     inputWindow;
    void *       dataPtr;
    CDKDataUnion resultData;
@@ -251,10 +251,10 @@ DeclareSetXXchar(extern,setCdk);
 #define DeclareCDKObjects(upper, mixed, line, type) \
 static int  _injectCDK ## mixed        (struct CDKOBJS *, chtype); \
 static void _destroyCDK ## mixed       (struct CDKOBJS *); \
-static void _drawCDK ## mixed          (struct CDKOBJS *, boolean); \
+static void _drawCDK ## mixed          (struct CDKOBJS *, _bool); \
 static void _eraseCDK ## mixed         (struct CDKOBJS *); \
 static void _focusCDK ## mixed         (struct CDKOBJS *); \
-static void _moveCDK ## mixed          (struct CDKOBJS *, int, int, boolean, boolean); \
+static void _moveCDK ## mixed          (struct CDKOBJS *, int, int, _bool, _bool); \
 static void _refreshDataCDK ## mixed   (struct CDKOBJS *); \
 static void _saveDataCDK ## mixed      (struct CDKOBJS *); \
 static void _unfocusCDK ## mixed       (struct CDKOBJS *); \
@@ -324,7 +324,7 @@ extern int getcCDKObject (
  */
 extern int getchCDKObject (
 		CDKOBJS *	/* object */,
-		boolean *	/* functionKey */);
+		_bool *	/* functionKey */);
 
 /*
  * Interactively reposition an object within a window.

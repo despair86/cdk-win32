@@ -56,7 +56,7 @@ cdk_buttonbox \- Creates a managed curses buttonbox widget.
 .TP 15
 .B "void drawCDKButtonbox ("
 .BI "CDKBUTTONBOX *" "buttonbox",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void drawCDKButtonboxButtons ("
 .BI "CDKBUTTONBOX *" "buttonbox");
@@ -64,7 +64,7 @@ cdk_buttonbox \- Creates a managed curses buttonbox widget.
 .B "void eraseCDKButtonbox ("
 .BI "CDKBUTTONBOX *" "buttonbox");
 .TP 15
-.B "boolean getCDKButtonboxBox ("
+.B "_bool getCDKButtonboxBox ("
 .BI "CDKBUTTONBOX *" "buttonbox");
 .TP 15
 .B "int getCDKButtonboxButtonCount ("
@@ -84,8 +84,8 @@ cdk_buttonbox \- Creates a managed curses buttonbox widget.
 .BI "CDKBUTTONBOX *" "buttonbox",
 .BI "int " "xpos",
 .BI "int " "ypos",
-.BI "boolean " "relative",
-.BI "boolean " "refresh");
+.BI "_bool " "relative",
+.BI "_bool " "refresh");
 .TP 15
 .B "CDKBUTTONBOX *newCDKButtonbox ("
 .BI "CDKSCREEN *" "cdkscreen",
@@ -99,8 +99,8 @@ cdk_buttonbox \- Creates a managed curses buttonbox widget.
 .BI "CDK_CONST char ** " "buttons" ,
 .BI "int " "buttonCount",
 .BI "chtype " "highlight" ,
-.BI "boolean " "box",
-.BI "boolean " "shadow");
+.BI "_bool " "box",
+.BI "_bool " "shadow");
 .TP 15
 .B "void positionCDKButtonbox ("
 .BI "CDKBUTTONBOX *" "buttonbox");
@@ -108,7 +108,7 @@ cdk_buttonbox \- Creates a managed curses buttonbox widget.
 .B "void setCDKButtonbox ("
 .BI "CDKBUTTONBOX *" "buttonbox",
 .BI "chtype " "highlight",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKButtonboxBackgroundAttrib ("
 .BI "CDKBUTTONBOX *" "buttonbox",
@@ -120,7 +120,7 @@ cdk_buttonbox \- Creates a managed curses buttonbox widget.
 .TP 15
 .B "void setCDKButtonboxBox ("
 .BI "CDKBUTTONBOX *" "buttonbox",
-.BI "boolean " "box");
+.BI "_bool " "box");
 .TP 15
 .B "void setCDKButtonboxBoxAttribute ("
 .BI "CDKBUTTONBOX *" "buttonbox",
@@ -282,7 +282,7 @@ Do not use the values \fITOP\fR, \fIBOTTOM\fR, \fILEFT\fR,
 \fIRIGHT\fR, or \fICENTER\fR when \fBrelative\fR = \fITRUE\fR.
 (weird things may happen).
 .bP
-The final parameter \fBrefresh\fR is a boolean value which states
+The final parameter \fBrefresh\fR is a _bool value which states
 whether the widget will get refreshed after the move.
 .RE
 .TP 5
